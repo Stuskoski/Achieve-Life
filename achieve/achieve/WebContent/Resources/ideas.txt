@@ -1,0 +1,3 @@
+Augustus:
+Able to hold the confirmation pictures on under acheivements, sort of like a story when you open up the acheivement.
+Along with date acheieved, icon, created by? etc...
