@@ -7,3 +7,9 @@ https://www.draw.io/ website to draw XML diagrams for Data schema.
 Need to start thinking of entities that our database will hold.
 
 -----------------------------------------------------------------
+
+10/5/2015
+
+Testing message board - hi
+
+-----------------------------------------------------------------
