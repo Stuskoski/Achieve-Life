@@ -12,9 +12,10 @@ class LoginView {
 	<meta name="description" content = "Login page for Achieve website">
 	</head>
 	<body>
+	<!--
 	<a href="/ra_lab3/index.php">
 	  <img src="resources/sitelogo.png" alt="Site Logo" style="width:250px;height:125px;border:0;">
-	</a>
+	</a>-->
 	
 	<h2>Existing Users Login</h2>
 	<form action ="login" method="Post">
@@ -31,7 +32,9 @@ class LoginView {
 	<i>New Users <a href="">Can Signup Here</a></i>
 	
 	<?php
+	/***Validate users against the php database, uses the Database class to make the connection and then close when done***/
 	
+	if(isset ($_POST['email'], $_POST['password'])){
 	try{
 		
 	session_start();
@@ -54,11 +57,9 @@ class LoginView {
 	
 	$_SESSION['user_session'] = $row['userName'];
 	
-	print_r($row);
-	
 	Database::clearDB();
 	
-	
+	/***Catch error and print to screen for now***/
 	}catch(Exception $e){
 		echo $e->getMessage();	
 	}
@@ -68,6 +69,7 @@ class LoginView {
 	</body>
 	</html>
 <?php 
+	}
   }
 }
 ?>
