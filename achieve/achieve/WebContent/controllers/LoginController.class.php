@@ -1,8 +1,8 @@
 <?php
 class LoginController {
 
-	public static function run() {  
-			LoginView::show;
+	public static function show() {  
+			LoginView::show();
   }
 }
 ?>
