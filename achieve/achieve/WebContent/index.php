@@ -17,6 +17,6 @@
 			LoginController::run();
 			break;
 		default:
-			HomeView::show();
+			LoginController::show();
 	};
 ?>	
