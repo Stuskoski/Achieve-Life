@@ -1,5 +1,5 @@
 <?php  
-
+include_once "models/Database.class.php";
 class LoginView {
 	
   public static function show() {  	
@@ -29,6 +29,40 @@ class LoginView {
 	</p>
 	
 	<i>New Users <a href="">Can Signup Here</a></i>
+	
+	<?php
+	
+	try{
+		
+	session_start();
+		
+	$dbh = Database::getDB();
+	
+	$stmt = $dbh->prepare ( "SELECT userName FROM Admins
+        						   WHERE email = :email AND password = :password" );
+	
+	$email = $_POST['email'];
+	$password = sha1($_POST['password']);
+	
+	
+	$stmt->bindParam ( ':email', $_POST['email'], PDO::PARAM_STR );
+	$stmt->bindParam ( ':password', $password, PDO::PARAM_STR, 40 );
+	
+	$stmt->execute ();
+	
+	$row = $stmt->fetch ( PDO::FETCH_ASSOC );
+	
+	$_SESSION['user_session'] = $row['userName'];
+	
+	print_r($row);
+	
+	Database::clearDB();
+	
+	
+	}catch(Exception $e){
+		echo $e->getMessage();	
+	}
+	?>
 		
 	</form>	
 	</body>

@@ -14,7 +14,7 @@
 	
 	switch ($control) {
 		case "login":
-			LoginController::run();
+			LoginController::show();
 			break;
 		default:
 			LoginController::show();
