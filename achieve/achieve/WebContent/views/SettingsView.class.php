@@ -12,6 +12,7 @@ class SettingsView {
 	<meta name="description" content = "Settings page for Achieve website">
 	</head>
 	<body>
+	<p>This is settings page</p>
 	
 	
 	</body>
