@@ -13,3 +13,10 @@ Need to start thinking of entities that our database will hold.
 Testing message board - hi
 
 -----------------------------------------------------------------
+10/19/2015
+Author: Michael
+
+Test message
+
+
+-----------------------------------------------------------------
