@@ -28,7 +28,7 @@ class LoginView {
 	<input type = "submit" name = "submit" value="Submit" >
 	<input type="reset" value="Clear">
 	</p>
-	
+	<i>New Users <a href="signup">Can Signup Here</a></i>
 	
 	
 	<?php
@@ -55,6 +55,7 @@ class LoginView {
 	
 	$row = $stmt->fetch ( PDO::FETCH_ASSOC );
 	
+	/***If value is set(if user is in database with correct password), add his username to session variable and send to dashboard***/
 	if(!is_null($row['userName'])){
 	$_SESSION['user_session'] = $row['userName'];
 	header("Location: dashboard");
@@ -69,12 +70,11 @@ class LoginView {
 	
 	/***Catch error and print to screen for now***/
 	}catch(Exception $e){
-		echo "<span class='error'>" . $e->getMessage() . "</span>";	
+		echo "<br><br><b>" . $e->getMessage() . "</b>";	
 	}
 	?>
 		
 	</form>	
-	<i>New Users <a href="signup">Can Signup Here</a></i>
 	</body>
 	</html>
 <?php 

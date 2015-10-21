@@ -1,9 +1,9 @@
-<?php
-echo "This is the dashboard for the website";
+<?php  
 
-
-
-
-
-
+class DashboardView {
+	
+  public static function show() {  	
+  	echo "This is the dashboard....it needs work";
+  }
+}
 ?>
