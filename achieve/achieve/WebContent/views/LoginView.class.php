@@ -29,7 +29,7 @@ class LoginView {
 	<input type="reset" value="Clear">
 	</p>
 	
-	<i>New Users <a href="">Can Signup Here</a></i>
+	
 	
 	<?php
 	/***Validate users against the php database, uses the Database class to make the connection and then close when done***/
@@ -55,17 +55,26 @@ class LoginView {
 	
 	$row = $stmt->fetch ( PDO::FETCH_ASSOC );
 	
+	if(!is_null($row['userName'])){
 	$_SESSION['user_session'] = $row['userName'];
+	header("Location: dashboard");
+	}
+	else
+	{
+		throw new Exception("Invalid username/password");
+	}
+		
 	
 	Database::clearDB();
 	
 	/***Catch error and print to screen for now***/
 	}catch(Exception $e){
-		echo $e->getMessage();	
+		echo "<span class='error'>" . $e->getMessage() . "</span>";	
 	}
 	?>
 		
 	</form>	
+	<i>New Users <a href="signup">Can Signup Here</a></i>
 	</body>
 	</html>
 <?php 

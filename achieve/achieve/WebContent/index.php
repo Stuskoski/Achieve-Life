@@ -19,8 +19,11 @@
 		case "settings":
 			SettingsController::show();
 			break;
-		case "profile":
-			ProfileController::show();
+		case "dashboard":
+			DashboardController::show();
+			break;
+		case "signup":
+			SignupController::show();
 			break;
 		default:
 			LoginController::show();
