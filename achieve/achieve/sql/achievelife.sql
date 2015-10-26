@@ -4,9 +4,9 @@ USE achievelife;
 
 
 
-DROP TABLE if EXISTS Admin;
+DROP TABLE if EXISTS Admins;
 CREATE TABLE Admins (
-  uid 				int(10) NOT NULL, 
+  uid 				int(10) PRIMARY KEY NOT NULL, 
   firstName			varchar (255) NOT NULL COLLATE utf8_unicode_ci,
   lastName			varchar (255) NOT NULL COLLATE utf8_unicode_ci,
   userName			varchar(30) UNIQUE NOT NULL COLLATE utf8_unicode_ci,
@@ -21,6 +21,24 @@ CREATE TABLE Admins (
   PRIMARY KEY (uid)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+DROP TABLE if EXISTS Users;
+CREATE TABLE Users (
+  uid 				int(10) PRIMARY KEY NOT NULL, 
+  firstName			varchar (255) NOT NULL COLLATE utf8_unicode_ci,
+  lastName			varchar (255) NOT NULL COLLATE utf8_unicode_ci,
+  userName			varchar(30) UNIQUE NOT NULL COLLATE utf8_unicode_ci,
+  email				varchar (255) NOT NULL COLLATE utf8_unicode_ci,
+  password          varchar(40) COLLATE utf8_unicode_ci,
+  gender			varchar(1) COLLATE utf8_unicode_ci,
+  title				varchar(40) COLLATE utf8_unicode_ci,
+  pCount			int(10),
+  aCount			int(4),
+  pPic				BLOB,
+  rank				int(3),
+  honesty			int(2),
+  dateCreated       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (uid)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 	   
 INSERT INTO Admins (uid, firstName, lastName, userName, email, password, gender, title) VALUES 
@@ -29,3 +47,6 @@ INSERT INTO Admins (uid, firstName, lastName, userName, email, password, gender,
 	   ('2', 'Michael', 'Murata', 'admin2', 'Murata_m33@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', 'Admin');
 INSERT INTO Admins (uid, firstName, lastName, userName, email, password, gender, title) VALUES 
 	   ('3', 'Sean', 'Butcher', 'admin3', 'Sean.Butcher@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', 'Admin');
+	   
+INSERT INTO Users (uid, firstName, lastName, userName, email, password, gender, title, rank) VALUES 
+	   ('1', 'John', 'Smith', 'user1', 'jsmith@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', 'Peasant', '1');	
