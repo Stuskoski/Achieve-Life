@@ -6,7 +6,7 @@ USE achievelife;
 
 DROP TABLE if EXISTS Admins;
 CREATE TABLE Admins (
-  uid 				int(10) PRIMARY KEY NOT NULL, 
+  uid 				int(10) NOT NULL, 
   firstName			varchar (255) NOT NULL COLLATE utf8_unicode_ci,
   lastName			varchar (255) NOT NULL COLLATE utf8_unicode_ci,
   userName			varchar(30) UNIQUE NOT NULL COLLATE utf8_unicode_ci,
@@ -23,7 +23,7 @@ CREATE TABLE Admins (
 
 DROP TABLE if EXISTS Users;
 CREATE TABLE Users (
-  uid 				int(10) PRIMARY KEY NOT NULL, 
+  uid 				int(10) NOT NULL, 
   firstName			varchar (255) NOT NULL COLLATE utf8_unicode_ci,
   lastName			varchar (255) NOT NULL COLLATE utf8_unicode_ci,
   userName			varchar(30) UNIQUE NOT NULL COLLATE utf8_unicode_ci,
