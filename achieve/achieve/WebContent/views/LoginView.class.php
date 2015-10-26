@@ -1,5 +1,4 @@
 <?php  
-include_once "models/Database.class.php";
 class LoginView {
 	
   public static function show() {  	
