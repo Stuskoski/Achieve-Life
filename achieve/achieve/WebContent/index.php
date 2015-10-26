@@ -14,7 +14,9 @@
 	
 	switch ($control) {
 		case "login":
+			MasterView::showHeader();
 			LoginController::show();
+			MasterView::showFooter();
 			break;
 		case "settings":
 			SettingsController::show();
@@ -26,6 +28,8 @@
 			SignupController::show();
 			break;
 		default:
+			MasterView::showHeader();
 			LoginController::show();
+			MasterView::showFooter();
 	};
 ?>	
