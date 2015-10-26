@@ -22,7 +22,9 @@
 			SettingsController::show();
 			break;
 		case "dashboard":
+			MasterView::showHeader();
 			DashboardController::show();
+			MasterView::showFooter();
 			break;
 		case "signup":
 			SignupController::show();
