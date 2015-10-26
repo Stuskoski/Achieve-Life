@@ -49,8 +49,8 @@ class MasterView {
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-right">
 					<div class="menu-links scroll-me">
 						<a href="dashboard"> <i class="ion-ios-list-outline"></i>
-						</a> <a href="profile"> <i class="ion-ios-person-outline"></i>
-						</a> <a href="lookup"> <i class="ion-ios-search"></i>
+						</a> <a href="setting"> <i class="ion-ios-gear-outline"></i>
+						</a> <a href="challenge"> <i class="ion-ios-game-controller-b-outline"></i>
 						</a> <a href="review"> <i class="ion-ios-compose-outline"></i>
 						<?php if(isset($_SESSION['user_session'])){?>
 						</a> <a href="logout"> <i class="ion-ios-close-outline exit"></i>
