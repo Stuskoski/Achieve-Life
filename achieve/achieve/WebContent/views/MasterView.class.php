@@ -17,7 +17,7 @@ class MasterView {
         <![endif]-->
 <!-- Favicon Icon -->
 <link rel="icon" href="assets/img/favicon.ico" />
-<title>RateMyLecture HomeView</title>
+<title>AchieveLife HomeView</title>
 <!-- BOOTSTRAP CORE CSS -->
 <link href="assets/css/bootstrap.css" rel="stylesheet" />
 <!-- ION ICONS STYLES -->

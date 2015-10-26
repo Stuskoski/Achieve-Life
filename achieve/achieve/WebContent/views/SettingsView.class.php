@@ -1,5 +1,4 @@
 <?php  
-//include_once "models/Database.class.php";
 class SettingsView {
 	
   public static function show() {  	
