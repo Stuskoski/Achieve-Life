@@ -27,7 +27,9 @@
 			MasterView::showFooter();
 			break;
 		case "signup":
+			MasterView::showHeader();
 			SignupController::show();
+			MasterView::showFooter();
 			break;
 		default:
 			MasterView::showHeader();
