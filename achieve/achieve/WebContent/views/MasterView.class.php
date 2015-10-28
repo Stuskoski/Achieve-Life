@@ -41,12 +41,12 @@ class MasterView {
 	<header id="header">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 logo-wrapper">
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 logo-wrapper">
 					<a href="home"><img src="assets/img/joust5.png" alt="" /></a>
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-right">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-2"></div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-2"></div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 text-right">
 					<div class="menu-links scroll-me">
 						<a href="dashboard"> <i class="ion-ios-list-outline"></i>
 						</a> <a href="setting"> <i class="ion-ios-gear-outline"></i>
