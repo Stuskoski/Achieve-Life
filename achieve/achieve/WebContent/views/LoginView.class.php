@@ -14,7 +14,7 @@ class LoginView {
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" name="password" class="form-control" placeholder="Password" required>
         <button class="btn-custom btn-one" type="submit">Sign in</button>
-        <button class="btn-custom btn-one" type="submit">Clear</button>
+        <button class="btn-custom btn-one" type="reset">Clear</button>
       </form>
     </div> <!-- /container -->
    </div>

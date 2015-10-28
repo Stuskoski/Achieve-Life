@@ -109,7 +109,7 @@ header .menu-links, .exit{
 }
 
 #home-login {
-    background: url(../../homeBackground/sanAntonio.jpg) no-repeat center center; 
+    background: url(../img/loginBack.jpg) no-repeat center center; 
     padding: 0;
     -webkit-background-size: cover;
     background-size: cover;
@@ -178,24 +178,24 @@ header .menu-links, .exit{
 
 .btn-one {   
 background-color: transparent;
-border:5px solid #00E6E6; 
+border:5px solid #B20000; 
 color:#fff;       
   
 }
  .btn-one:hover {
- background-color:#00E6E6;
+ background-color:#B20000;
  color:#fff;
  text-decoration:none;
     }
 
  .btn-two {   
 background-color: transparent;
-border:5px solid #00E6E6; 
+border:5px solid #B20000; 
 color:#fff;       
   
 }
  .btn-two:hover {
- background-color:#00E6E6;
+ background-color:#B20000;
  color:#fff;
  text-decoration:none;
     }
