@@ -31,6 +31,10 @@
 			SignupController::show();
 			MasterView::showFooter();
 			break;
+		case "guild":
+			MasterView::showHeader();
+			GuildController::show();
+			MasterView::showFooter();
 		default:
 			MasterView::showHeader();
 			LoginController::show();
