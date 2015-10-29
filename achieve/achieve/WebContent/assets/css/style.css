@@ -116,21 +116,6 @@ header .menu-links, .exit{
     -moz-background-size: cover;    
 }
 
-#home-lookup {
-    background: url(../../homeBackground/univCenter.jpg) no-repeat center center; 
-    padding: 0;
-    -webkit-background-size: cover;
-    background-size: cover;
-    -moz-background-size: cover;    
-}
-
-	#home-lookup .overlay {
-        padding-top: 120px;
-        background-color: rgba(36, 36, 36, 0.5);
-        min-height: 970px;
-        padding-bottom: 40px;
-    }
-
 	#home-login .overlay {
         padding-top: 120px;
         background-color: rgba(36, 36, 36, 0.5);

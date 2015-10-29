@@ -1,7 +1,8 @@
 <?php
-class GuildController
+class GuildController{
 	
-	public static function show{
+	public static function show(){
+		GuildView::show();
 		
 	}
 }

@@ -35,6 +35,7 @@
 			MasterView::showHeader();
 			GuildController::show();
 			MasterView::showFooter();
+			break;
 		default:
 			MasterView::showHeader();
 			LoginController::show();
