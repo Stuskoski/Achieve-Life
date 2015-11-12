@@ -1,6 +1,6 @@
 <?php  
 
-class DashboardView {
+class ChallengeView {
 	
   public static function show() {  
   	
@@ -11,7 +11,7 @@ class DashboardView {
   	?>
   	
   	
-  	<link href="assets/css/dashboard.css" rel="stylesheet">
+  	<link href="assets/css/challenge.css" rel="stylesheet">
 	  <div id="dashboard">
 	   <div class="overlay">
 	  	<div class="container">

@@ -18,13 +18,11 @@
 			LoginController::show();
 			MasterView::showFooter();
 			break;
+		case "logout":
+			LogoutController::run();
+			break;
 		case "settings":
 			SettingsController::show();
-			break;
-		case "dashboard":
-			MasterView::showHeader();
-			DashboardController::show();
-			MasterView::showFooter();
 			break;
 		case "signup":
 			MasterView::showHeader();
@@ -36,9 +34,14 @@
 			GuildController::show();
 			MasterView::showFooter();
 			break;
+		case "challenge":
+			MasterView::showHeader();
+			ChallengeController::show();
+			MasterView::showFooter();
+			break;
 		default:
 			MasterView::showHeader();
-			LoginController::show();
+			DashboardController::show();
 			MasterView::showFooter();
 	};
 ?>	
