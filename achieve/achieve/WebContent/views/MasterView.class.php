@@ -42,7 +42,7 @@ class MasterView {
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 logo-wrapper">
-					<a href="home"><img src="assets/img/joust5.png" alt="" /></a>
+					<a href="dashboard"><img src="assets/img/joust5.png" alt="" /></a>
 				</div>
 				<div class="col-lg-6 col-md-5 col-sm-4 col-xs-0"></div>
 				<div class="col-lg-3 col-md-5 col-sm-6 col-xs-10">
