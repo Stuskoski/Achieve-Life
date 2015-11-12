@@ -56,6 +56,7 @@ body {
   background: black;
 }
 .btn-challenger {
+  margin-left:25px;
   margin-top:30px;
   background-color: #004A7F;
   -webkit-border-radius: 10px;

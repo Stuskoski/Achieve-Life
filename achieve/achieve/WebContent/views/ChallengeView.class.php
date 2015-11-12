@@ -19,9 +19,16 @@ class ChallengeView {
 	  	   <div class="row scroll-me">
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-0"></div>
 			<div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
-	   			<div id="review-title">
-					<h1>Create A Challenge</h1>
-				</div>
+	   			
+	   			<div class="row scroll-me">
+				 <div class="col-lg-1 col-md-2 col-sm-2 col-xs-0"></div>
+				 <div class="col-lg-8 col-md-7 col-sm-8 col-xs-12">
+		   			<div id="review-title">
+						<h1>Create A Challenge</h1>
+					</div>
+				 </div>
+		         <div class="col-lg-3 col-md-2 col-sm-2 col-xs-0"></div>
+		        </div>
 			
 		   
 		  <!-- Create a challenge form. Submitted with ajax -->
@@ -34,7 +41,7 @@ class ChallengeView {
 			  	<div>
 			  		<h4>Name of Challenge</h4>
 	            	<input class="submit-form-name" type="text" name="nameOfChallenge" maxlength="30" pattern="[a-zA-Z!? ]{2,30}" title="Please enter a valid name using A-Z"
-	            	placeholder="Challenge Name" >
+	            	placeholder="Challenge Name" required >
 	        	</div>
 	         </div>
 	         <div class="col-lg-3 col-md-3 col-sm-2 col-xs-0"></div>
@@ -42,18 +49,28 @@ class ChallengeView {
         	
         	<div>
         	    <h4>Challenge Description</h4>
-		  		<textarea class="form-control submit-form" rows="3" id="comment" name="comments" placeholder="Description"></textarea>
+		  		<textarea class="form-control submit-form" rows="3" id="comment" name="comments" placeholder="Description" required></textarea>
 			</div>
 			
 			<div>
-				<textarea class="form-control submit-form" rows="3" id="comment" name="comments" placeholder="Users"></textarea>
+				<textarea class="form-control submit-form" rows="3" id="comment" name="comments" placeholder="Users" required></textarea>
 			</div>
 		  	
 		  	<div><input type="button" class="btn btn-challenge" value="Add Users"></div>
 		  	
-	  		<div class="form-group">	
-	  		  <div><input type="submit" class="btn btn-challenger" value="Send Challenge"></div>
-	  		</div>
+		  	
+		  	<div class="row scroll-me">
+			 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
+			 <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">	  	
+			  	<div class="form-group">	
+		  		  <div><input type="submit" class="btn btn-challenger" value="Send Challenge"></div>
+		  		</div>
+	         </div>
+	         <div class="col-lg-3 col-md-3 col-sm-2 col-xs-0"></div>
+	        </div>
+		  	
+		  	
+	  		
 	  		
 	  	 </form>
 	  	 </div>
