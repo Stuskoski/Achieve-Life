@@ -9,7 +9,7 @@ class ChallengeView {
   	}
   	
   	?>
-  	
+  	<script src="assets/js/challenge.js"></script> 
   	<link href="assets/css/challenge.css" rel="stylesheet">
 	  <div id="dashboard">
 	   <div class="overlay">
@@ -46,6 +46,20 @@ class ChallengeView {
 	         </div>
 	         <div class="col-lg-3 col-md-3 col-sm-2 col-xs-0"></div>
 	        </div>
+	        
+	        
+	        <div class="row scroll-me">
+			 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
+			 <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">	  	
+			  	<div>
+			  		<h4>Number of Points</h4>
+	            	<input class ="submit-form-name" type='number' size='10' id='numberinput' name='mynumber' value='0' step="5"/>
+	        	</div>
+	         </div>
+	         <div class="col-lg-3 col-md-3 col-sm-2 col-xs-0"></div>
+	        </div>
+	        
+	        
         	
         	<div>
         	    <h4>Challenge Description</h4>
@@ -56,14 +70,14 @@ class ChallengeView {
 				<textarea class="form-control submit-form" rows="3" id="comment" name="comments" placeholder="Users" required></textarea>
 			</div>
 		  	
-		  	<div><input type="button" class="btn btn-challenge" value="Add Users"></div>
+		  	<div><input id="btn-add" type="button" class="btn btn-challenge" value="Add Users"></div>
 		  	
 		  	
 		  	<div class="row scroll-me">
 			 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
 			 <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">	  	
 			  	<div class="form-group">	
-		  		  <div><input type="submit" class="btn btn-challenger" value="Send Challenge"></div>
+		  		  <div><input type="submit" class="btn btn-challenge" value="Send Challenge"></div>
 		  		</div>
 	         </div>
 	         <div class="col-lg-3 col-md-3 col-sm-2 col-xs-0"></div>
