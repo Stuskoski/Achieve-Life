@@ -17,6 +17,7 @@ CREATE TABLE Admins (
   pCount			int(10),
   aCount			int(4),
   pPic				BLOB,
+  pPicName 			varchar(50) COLLATE utf8_unicode_ci,
   dateCreated       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (uid)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -39,6 +40,22 @@ CREATE TABLE Users (
   dateCreated       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (uid)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+
+DROP TABLE if EXISTS Challenges;
+CREATE TABLE Challenges (
+  cid 				int(10) NOT NULL, 
+  cPic				BLOB,
+  name				varchar (255) NOT NULL COLLATE utf8_unicode_ci,
+  points			int(10) NOT NULL, 
+  description		varchar (255) NOT NULL COLLATE utf8_unicode_ci,
+  users				varchar (255) COLLATE utf8_unicode_ci,
+  dateCreated       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (cid)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
 
 	   
 INSERT INTO Admins (uid, firstName, lastName, userName, email, password, gender, title) VALUES 

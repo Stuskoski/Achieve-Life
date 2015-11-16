@@ -104,15 +104,21 @@ body {
 
 .challenge-pic img{
 	float:left;
-	margin-right:15px;
+	margin-right:10px;
 }
 
 .challenge-pic input h4{
 	float:right;
+	margin-left:50px;
 }
 
 @media(max-width:767px){
 	.challenge-pic > img{
 		display:block;
 	}
+}
+
+/*aligns the placeholder text for google chrome*/
+input::-webkit-input-placeholder { /* WebKit browsers */
+  line-height: 1.5em;
 }

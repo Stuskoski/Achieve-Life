@@ -62,18 +62,18 @@ header {
     padding-bottom: 12px;
 }
 
-    header .logo-wrapper img {
-      max-height: 65px;
-    }
-    header .menu-links {
-        padding-top:15px;
-    }
- header .menu-links a {
-        font-size:30px;
-        color:#B20000;
-        font-weight:900;
-        margin:15px;
-        
+header .logo-wrapper img {
+     max-height: 45px;
+   }
+header .menu-links {
+    padding-top:15px;
+}
+header .menu-links a {
+       font-size:30px;
+       color:#B20000;
+       font-weight:900;
+       margin:15px;
+       
     }
 header .menu-links, .exit{
         font-size:30px;

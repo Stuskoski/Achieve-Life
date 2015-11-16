@@ -41,8 +41,7 @@ class ChallengeView {
 			  	<div class="challenge-pic">
 			  		<img src ="assets/img/generic.png" alt="Profile Picture" style="width:135px;height:135px;">
 			  		<h4>Name of Challenge</h4>
-	            	<input class="submit-form-name" type="text" name="nameOfChallenge" maxlength="30" pattern="[a-zA-Z!? ]{2,30}" title="Please enter a valid name using A-Z"
-	            	placeholder="Challenge Name" required >
+	            	<input class="submit-form-name" type="text" name="nameOfChallenge" maxlength="30" pattern="[a-zA-Z!? ]{2,30}" title="Please enter a valid name using A-Z" placeholder="Challenge Name" required>
 	            	<h4>Number of Points</h4>
 	            	<input class ="submit-form-name" type='number' size='10' id='numberinput' name='mynumber' value='0' step="5" min="0"/>
 	        	</div>
