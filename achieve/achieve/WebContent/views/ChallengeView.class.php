@@ -36,27 +36,18 @@ class ChallengeView {
 	  	
 	  	
 			<div class="row scroll-me">
-			 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-			 <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">	  	
-			  	<div>
+			 <div class="col-lg-0 col-md-0 col-sm-0 col-xs-0"></div>
+			 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">	  	
+			  	<div class="challenge-pic">
+			  		<img src ="assets/img/generic.png" alt="Profile Picture" style="width:135px;height:135px;">
 			  		<h4>Name of Challenge</h4>
 	            	<input class="submit-form-name" type="text" name="nameOfChallenge" maxlength="30" pattern="[a-zA-Z!? ]{2,30}" title="Please enter a valid name using A-Z"
 	            	placeholder="Challenge Name" required >
+	            	<h4>Number of Points</h4>
+	            	<input class ="submit-form-name" type='number' size='10' id='numberinput' name='mynumber' value='0' step="5" min="0"/>
 	        	</div>
 	         </div>
-	         <div class="col-lg-3 col-md-3 col-sm-2 col-xs-0"></div>
-	        </div>
-	        
-	        
-	        <div class="row scroll-me">
-			 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-			 <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">	  	
-			  	<div>
-			  		<h4>Number of Points</h4>
-	            	<input class ="submit-form-name" type='number' size='10' id='numberinput' name='mynumber' value='0' step="5"/>
-	        	</div>
-	         </div>
-	         <div class="col-lg-3 col-md-3 col-sm-2 col-xs-0"></div>
+	         <div class="col-lg-0 col-md-0 col-sm-0 col-xs-0"></div>
 	        </div>
 	        
 	        
@@ -74,8 +65,8 @@ class ChallengeView {
 		  	
 		  	
 		  	<div class="row scroll-me">
-			 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-			 <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">	  	
+			 <div class="col-lg-3 col-md-2 col-sm-2 col-xs-0"></div>
+			 <div class="col-lg-8 col-md-7 col-sm-8 col-xs-12">	  	
 			  	<div class="form-group">	
 		  		  <div><input type="submit" class="btn btn-challenge" value="Send Challenge"></div>
 		  		</div>
