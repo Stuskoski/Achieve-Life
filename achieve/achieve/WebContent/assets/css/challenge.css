@@ -104,6 +104,7 @@ body {
 
 .challenge-pic img{
 	float:left;
+	margin-right:15px;
 }
 
 .challenge-pic input h4{
