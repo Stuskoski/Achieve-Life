@@ -46,7 +46,7 @@ INSERT INTO Admins (uid, firstName, lastName, userName, email, password, gender,
 INSERT INTO Admins (uid, firstName, lastName, userName, email, password, gender, title) VALUES 
 	   ('2', 'Michael', 'Murata', 'admin2', 'Murata_m33@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', 'Admin');
 INSERT INTO Admins (uid, firstName, lastName, userName, email, password, gender, title) VALUES 
-	   ('3', 'Sean', 'Butcher', 'admin3', 'Sean.Butcher@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', 'Admin');
+	   ('3', 'Sean', 'Butcher', 'admin3', 'butcher.sean@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', 'Admin');
 	   
 INSERT INTO Users (uid, firstName, lastName, userName, email, password, gender, title, rank) VALUES 
 	   ('1', 'John', 'Smith', 'user1', 'jsmith@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', 'Peasant', '1');	
