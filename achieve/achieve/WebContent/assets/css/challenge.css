@@ -51,6 +51,18 @@ body{
 	min-width: 200px;
 
 }
+.add-users-class{
+	display:none;
+}
+
+.add-user-class{
+	display:show;
+	opacity: 0.7;
+	color:#000;
+	margin-bottom: 10px;
+	max-width: 450px;
+}
+
 
 body {
   background: black;
