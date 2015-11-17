@@ -29,7 +29,7 @@ class GetFriends{
 				
 				/***Parse through the list***/
 				while ($row = $stmt->fetch()) {
-				   print $row[0] . "\n";
+				   echo $row[0] . "\n";
 				 }
 				
 				/***Clear the connection to the database***/
