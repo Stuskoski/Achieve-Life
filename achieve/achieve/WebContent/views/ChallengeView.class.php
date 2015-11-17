@@ -38,15 +38,17 @@ class ChallengeView {
 			 <div class="col-lg-0 col-md-0 col-sm-0 col-xs-0"></div>
 			 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">	  	
 			  	<div class="challenge-pic">
-			  		<?php 
-			  		//get the picture from the database
-			  		ChallengeController::getPic($_SESSION['user_session']);
-			  		?>
+			  	    <div class="thumbnaild">
+			  			<?php 
+					  		//get the picture from the database
+					  		ChallengeController::getPic($_SESSION['user_session']);
+				  		?>
+			  		</div>
 			  		<!--<img src ="assets/img/generic.png" alt="Profile Picture" style="width:135px;height:135px;">   default pic, database looks for pic, default if not found-->
 			  		<h4>Name of Challenge</h4>
 	            	<input class="submit-form-name" type="text" name="nameOfChallenge" maxlength="30" pattern="[a-zA-Z!? ]{2,30}" title="Please enter a valid name using A-Z" placeholder="Challenge Name" required>
 	            	<h4>Number of Points</h4>
-	            	<input class ="submit-form-name" type='number' id='numberinput' name='numPoints' value='0' step="5" min="0" max="<?php GetMaxPoints::getMax();?>"/>
+	            	<input class ="submit-form-name" type='number' id='numberinput' name='numPoints' value='5' step="5" min="5" max="<?php GetMaxPoints::getMax();?>"/>
 	        	</div>
 	         </div>
 	         <div class="col-lg-0 col-md-0 col-sm-0 col-xs-0"></div>

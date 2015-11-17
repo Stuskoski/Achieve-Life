@@ -6,7 +6,7 @@ class GetProfilePic{
 		$dbh = Database::getDB();
 
 		//select the img based on the user named passed, SET
-		$stmt =  $dbh->prepare("SELECT image, image_type FROM picture WHERE userName= :user");
+		$stmt =  $dbh->prepare("SELECT pPic FROM Users WHERE userName= :user");
 		
 		//bind
 		$stmt->bindParam ( ':user', $user, PDO::PARAM_STR );
@@ -21,11 +21,12 @@ class GetProfilePic{
 		$array = $stmt->fetch();
 		
 		/*** check we have a single image and type ***/
-		if(sizeof($array) == 2)
+		if(sizeof($array) == 1)
 		{
 			/*** set the headers and display the image ***/
 			//header("Content-type: ".$array['image_type']);
-			echo '<img alt="Profile Picture" style="width:105px;height:130px;" src="data:image/jpeg;base64,'.base64_encode( $array['image'] ).'"/>';
+			echo '<img alt="Profile Picture" style="width:125px;height:125px;" src="data:image/jpeg;base64,'.base64_encode( $array['pPic'] ).'"/>';
+			//echo '<input type ="image" name="thumbnail" value="myval" alt="Profile Picture" style="width:105px;height:130px;" src="data:image/jpeg;base64,'.base64_encode( $array['image'] ).'"/>';
 		
 			/*** output the image ***/
 			//echo $array['image'];

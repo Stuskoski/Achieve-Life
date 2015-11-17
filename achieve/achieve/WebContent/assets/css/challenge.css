@@ -102,7 +102,7 @@ body {
   animation: glowing 10500ms infinite;
 }
 
-.challenge-pic img{
+.challenge-pic .thumbnaild{
 	float:left;
 	margin-right:10px;
 }
