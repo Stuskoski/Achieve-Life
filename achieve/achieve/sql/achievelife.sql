@@ -50,7 +50,9 @@ CREATE TABLE picture (
   image_size varchar(25) NOT NULL,
   image_ctgy varchar(25) NOT NULL,
   image_name varchar(50) NOT NULL,
-  KEY image_id (image_id)
+  userName	 varchar(30) UNIQUE NOT NULL COLLATE utf8_unicode_ci,
+  KEY image_id (image_id),
+  FOREIGN KEY (userName) REFERENCES Users(userName)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
@@ -78,4 +80,10 @@ INSERT INTO Admins (uid, firstName, lastName, userName, email, password, gender,
 	   ('3', 'Sean', 'Butcher', 'admin3', 'butcher.sean@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', 'Admin');
 	   
 INSERT INTO Users (uid, firstName, lastName, userName, email, password, gender, title, rank) VALUES 
-	   ('1', 'John', 'Smith', 'user1', 'jsmith@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', 'Peasant', '1');	
+	   ('1', 'John', 'Smith', 'user1', 'jsmith@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', 'Peasant', '1');
+INSERT INTO Users (uid, firstName, lastName, userName, email, password, gender, title) VALUES 
+	   ('2', 'Augustus', 'Rutkoski', 'admin1', 'stuskoski@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', 'Admin');
+INSERT INTO Users (uid, firstName, lastName, userName, email, password, gender, title) VALUES 
+	   ('3', 'Michael', 'Murata', 'admin2', 'Murata_m33@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', 'Admin');
+INSERT INTO Users (uid, firstName, lastName, userName, email, password, gender, title) VALUES 
+	   ('4', 'Sean', 'Butcher', 'admin3', 'butcher.sean@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', 'Admin');

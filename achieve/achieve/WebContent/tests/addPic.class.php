@@ -8,7 +8,7 @@ include_once("../models/Database.class.php");
   <h2>Please Choose a File and click Submit</h2>
   <form enctype="multipart/form-data" action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" method="post">
   <input type="hidden" name="MAX_FILE_SIZE" value="99999999" />
-  <div><input name="image" accept="image/jpeg" type="file" /></div>
+  <div><input name="image" type="file" /></div>
   <div><input type="submit" value="Submit" /></div>
   </form>
 
@@ -51,6 +51,7 @@ if(is_uploaded_file($tmpName) && getimagesize($tmpName) != false)
     $size = $size[3];
     $name = $_FILES['image']['name'];
     $maxsize = 99999999;
+    $user = "admin1";
 
 	
     
@@ -61,7 +62,7 @@ if(is_uploaded_file($tmpName) && getimagesize($tmpName) != false)
         $dbh = Database::getDB();
 
             /*** our sql query ***/
-        $stmt = $dbh->prepare("INSERT INTO picture (image_type ,image, image_size, image_name) VALUES (? ,?, ?, ?)");
+        $stmt = $dbh->prepare("INSERT INTO picture (image_type ,image, image_size, image_name, userName) VALUES (? ,?, ?, ?, ?)");
 
         echo $type . "<br>". $imgfp . "<br>" . $size . "<br>" . $name . "<br>";
         
@@ -70,6 +71,7 @@ if(is_uploaded_file($tmpName) && getimagesize($tmpName) != false)
         $stmt->bindParam(2, $imgfp, PDO::PARAM_LOB);
         $stmt->bindParam(3, $size);
         $stmt->bindParam(4, $name);
+        $stmt->bindParam(5, $user);
 
         /*** execute the query ***/
         $stmt->execute();

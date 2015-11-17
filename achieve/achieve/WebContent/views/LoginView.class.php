@@ -31,7 +31,7 @@ class LoginView {
 		
 	$dbh = Database::getDB();
 	
-	$stmt = $dbh->prepare ( "SELECT userName FROM Admins
+	$stmt = $dbh->prepare ( "SELECT userName FROM Users
         						   WHERE email = :email AND password = :password" );
 	
 	$email = $_POST['email'];

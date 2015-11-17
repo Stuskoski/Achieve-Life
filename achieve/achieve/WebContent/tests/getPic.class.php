@@ -6,7 +6,7 @@ if(true)
 //if(filter_has_var(INPUT_GET, "image_id") !== false && filter_input(INPUT_GET, 'image_id', FILTER_VALIDATE_INT) !== false)
 {
 	/*** assign the image id ***/
-	$image_id = 9;
+	$image_id = 1;
 	//$image_id = filter_input(INPUT_GET, "image_id", FILTER_SANITIZE_NUMBER_INT);
 	try     {
 		/*** connect to the database ***/
@@ -30,11 +30,11 @@ if(true)
 		if(sizeof($array) == 2)
 		{
 			/*** set the headers and display the image ***/
-			header("Content-type: ".$array['image_type']);
-			//echo '<img src="data:image/jpeg;base64,'.base64_encode( $array['image'] ).'"/>';
+			//header("Content-type: ".$array['image_type']);
+			echo '<img src="data:image/jpeg;base64,'.base64_encode( $array['image'] ).'"/>';
 
 			/*** output the image ***/
-			echo $array['image'];
+			//echo $array['image'];
 		}
 		else
 		{
