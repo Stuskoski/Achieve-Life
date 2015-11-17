@@ -17,7 +17,7 @@ class MasterView {
         <![endif]-->
 <!-- Favicon Icon -->
 <link rel="icon" href="assets/img/favicon.ico" />
-<title>AchieveLife HomeView</title>
+<title>Joust</title>
 <!-- BOOTSTRAP CORE CSS -->
 <link href="assets/css/bootstrap.css" rel="stylesheet" />
 <!-- ION ICONS STYLES -->
@@ -41,24 +41,23 @@ class MasterView {
 	<header id="header">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 logo-wrapper">
-					<a href="home"><img src="assets/img/joust5.png" alt="" /></a>
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 logo-wrapper">
+					<a href="dashboard"><img src="assets/img/joustTemp.png" alt="" /></a>
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-right">
+				<div class="col-lg-6 col-md-5 col-sm-4 col-xs-0"></div>
+				<div class="col-lg-3 col-md-5 col-sm-6 col-xs-10">
 					<div class="menu-links scroll-me">
 						<a href="dashboard"> <i class="ion-ios-list-outline"></i>
 						</a> <a href="setting"> <i class="ion-ios-gear-outline"></i>
 						</a> <a href="challenge"> <i class="ion-ios-game-controller-b-outline"></i>
-						</a> <a href="review"> <i class="ion-ios-compose-outline"></i>
+						</a> <a href="guild"> <i class="ion-beer"></i>
 						<?php if(isset($_SESSION['user_session'])){?>
 						</a> <a href="logout"> <i class="ion-ios-close-outline exit"></i>
 						<?php }?>
 						</a>
 					</div>
 				</div>
-
+				<div class="col-lg-0 col-md-0 col-sm-0 col-xs-0"></div>
 			</div>
 		</div>
 	</header>

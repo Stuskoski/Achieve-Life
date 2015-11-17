@@ -62,18 +62,18 @@ header {
     padding-bottom: 12px;
 }
 
-    header .logo-wrapper img {
-      max-height: 65px;
-    }
-    header .menu-links {
-        padding-top:15px;
-    }
- header .menu-links a {
-        font-size:30px;
-        color:#B20000;
-        font-weight:900;
-        margin:15px;
-        
+header .logo-wrapper img {
+     max-height: 45px;
+   }
+header .menu-links {
+    padding-top:15px;
+}
+header .menu-links a {
+       font-size:30px;
+       color:#B20000;
+       font-weight:900;
+       margin:15px;
+       
     }
 header .menu-links, .exit{
         font-size:30px;
@@ -109,27 +109,12 @@ header .menu-links, .exit{
 }
 
 #home-login {
-    background: url(../../homeBackground/sanAntonio.jpg) no-repeat center center; 
+    background: url(../img/loginBack.jpg) no-repeat center center; 
     padding: 0;
     -webkit-background-size: cover;
     background-size: cover;
     -moz-background-size: cover;    
 }
-
-#home-lookup {
-    background: url(../../homeBackground/univCenter.jpg) no-repeat center center; 
-    padding: 0;
-    -webkit-background-size: cover;
-    background-size: cover;
-    -moz-background-size: cover;    
-}
-
-	#home-lookup .overlay {
-        padding-top: 120px;
-        background-color: rgba(36, 36, 36, 0.5);
-        min-height: 970px;
-        padding-bottom: 40px;
-    }
 
 	#home-login .overlay {
         padding-top: 120px;
@@ -178,24 +163,24 @@ header .menu-links, .exit{
 
 .btn-one {   
 background-color: transparent;
-border:5px solid #00E6E6; 
+border:5px solid #B20000; 
 color:#fff;       
   
 }
  .btn-one:hover {
- background-color:#00E6E6;
+ background-color:#B20000;
  color:#fff;
  text-decoration:none;
     }
 
  .btn-two {   
 background-color: transparent;
-border:5px solid #00E6E6; 
+border:5px solid #B20000; 
 color:#fff;       
   
 }
  .btn-two:hover {
- background-color:#00E6E6;
+ background-color:#B20000;
  color:#fff;
  text-decoration:none;
     }

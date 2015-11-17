@@ -14,8 +14,9 @@ class LoginView {
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" name="password" class="form-control" placeholder="Password" required>
         <button class="btn-custom btn-one" type="submit">Sign in</button>
-        <button class="btn-custom btn-one" type="submit">Clear</button>
+        <button class="btn-custom btn-one" type="reset">Clear</button>
       </form>
+      <div class="center"><i>New Users <a href="signup">Can Signup Here</a></i></div>
     </div> <!-- /container -->
    </div>
   </div>
@@ -31,7 +32,7 @@ class LoginView {
 		
 	$dbh = Database::getDB();
 	
-	$stmt = $dbh->prepare ( "SELECT userName FROM Admins
+	$stmt = $dbh->prepare ( "SELECT userName FROM Users
         						   WHERE email = :email AND password = :password" );
 	
 	$email = $_POST['email'];

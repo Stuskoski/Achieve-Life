@@ -49,13 +49,33 @@ body{
 
 .btn-one {   
 background-color: transparent;
-border:5px solid #00E6E6; 
+border:5px solid #B20000; 
 color:#fff;       
   
 }
 
  .btn-one:hover {
- background-color:#00E6E6;
+ background-color:#B20000;
  color:#fff;
  text-decoration:none;
     }
+    
+a:link{
+	color: #B20000 !important;
+}
+
+a:visited{
+	color: #B20000 !important;
+}
+
+.center {
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    top: 49%;
+    left: 50%;
+    margin-left: -100px; /* margin is -0.5 * dimension */
+    margin-top: -25px; 
+}​
+
+

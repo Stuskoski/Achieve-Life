@@ -2,7 +2,10 @@
 class SignupView {
 //firstName, lastName, userName, email, password, gender	
   public static function show() {  	
-?> 
+?>
+<link href="assets/css/signup.css" rel="stylesheet">
+ <div id="signup">
+   <div class="overlay">
 	<div class="container">
 		<div class="row">
 			<form class="form-horizontal" role="form" action="" method="post">
@@ -68,6 +71,8 @@ class SignupView {
 			</form>
 		</div>
 	</div>
+  </div>
+</div>
 	<?php
 	}
 }
