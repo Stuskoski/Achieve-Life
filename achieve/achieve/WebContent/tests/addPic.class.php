@@ -1,17 +1,22 @@
 <?php 
 include_once("../models/Database.class.php");
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head><title>File Upload To Database</title></head>
+  <body>
+  <h2>Please Choose a File and click Submit</h2>
+  <form enctype="multipart/form-data" action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" method="post">
+  <input type="hidden" name="MAX_FILE_SIZE" value="99999999" />
+  <div><input name="image" accept="image/jpeg" type="file" /></div>
+  <div><input type="submit" value="Submit" /></div>
+  </form>
 
-<form action="" method="post" enctype="multipart/form-data">
-	<input type="hidden" name="MAX_FILE_SIZE" value="500" />
-    <div><input name="userfile" type="file" /></div>
-    <div><input type="submit" value="Submit" /></div>
-</form>
 
 
 <?php
 
-if(!isset($_FILES['userfile']))
+if(!isset($_FILES['image']))
 {
 	echo '<p>Please select a file</p>';
 }
@@ -28,39 +33,62 @@ else
 	}
 }
 
-
-
+	
 function upload(){
 	
+$tmpName = $_FILES['image']['tmp_name'];	
 	
+/*** check if a file was uploaded ***/
+if(is_uploaded_file($tmpName) && getimagesize($tmpName) != false)
+    {
+    /***  get the image info. ***/
+    $size = getimagesize($tmpName);
+    /*** assign our variables ***/
+    $type = $size['mime'];
+    $imgfp = fopen($_FILES['image']['tmp_name'], 'rb');
+   // $data = fread($imgfp, filesize($tmpName));
+    //$data = addslashes($data);
+    $size = $size[3];
+    $name = $_FILES['image']['name'];
+    $maxsize = 99999999;
+
 	
-	
-	
+    
+    /***  check the file is less than the maximum file size ***/
+    if($_FILES['image']['size'] < $maxsize )
+        {
+        /*** connect to db ***/
+        $dbh = Database::getDB();
+
+            /*** our sql query ***/
+        $stmt = $dbh->prepare("INSERT INTO picture (image_type ,image, image_size, image_name) VALUES (? ,?, ?, ?)");
+
+        echo $type . "<br>". $imgfp . "<br>" . $size . "<br>" . $name . "<br>";
+        
+        /*** bind the params ***/
+        $stmt->bindParam(1, $type);
+        $stmt->bindParam(2, $imgfp, PDO::PARAM_LOB);
+        $stmt->bindParam(3, $size);
+        $stmt->bindParam(4, $name);
+
+        /*** execute the query ***/
+        $stmt->execute();
+        }
+    else
+        {
+        // if the file is not less than the maximum allowed, print an error
+        throw new Exception("File Size Error");
+        }
+    }
+else
+    {
+    /*** throw an exception is image is not of type ***/
+    throw new Exception("Unsupported Image Format!");
+    }
 }
 
 
 
-
-
-
-//SQL injection defense
-$image = addslashes($_FILES['image']);
-
-//Get name
-$image_name = addslashes($_FILES['image']['name']);
-
-//Insert into DB
-$stmt = "INSERT INTO `product_images` (`id`, `image`, `image_name`) VALUES ('1', '{$image}', '{$image_name}')";
-
-$stmt = $dbh->prepare ( "INSERT INTO 'achievelife' userName FROM Admins
-        						   WHERE email = :email AND password = :password" );
-
-$stmt = $dbh->prepare("INSERT INTO admins (pPic, pPicName)
-						   VALUES (data, 'kalitsa')");
-
-//Get database
-$dbh = Database::getDB();
-
-
-
 ?>
+</body>
+</html>
