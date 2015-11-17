@@ -30,7 +30,6 @@ class ChallengeView {
 		         <div class="col-lg-3 col-md-2 col-sm-2 col-xs-0"></div>
 		        </div>
 			
-		   
 		  <!-- Create a challenge form. Submitted with ajax or php -->
 		  <form id="challenge-form" action="models/AddChallenge.class.php" method="post">
 	  	
@@ -47,7 +46,7 @@ class ChallengeView {
 			  		<h4>Name of Challenge</h4>
 	            	<input class="submit-form-name" type="text" name="nameOfChallenge" maxlength="30" pattern="[a-zA-Z!? ]{2,30}" title="Please enter a valid name using A-Z" placeholder="Challenge Name" required>
 	            	<h4>Number of Points</h4>
-	            	<input class ="submit-form-name" type='number' size='10' id='numberinput' name='numPoints' value='0' step="5" min="0"/>
+	            	<input class ="submit-form-name" type='number' id='numberinput' name='numPoints' value='0' step="5" min="0" max="<?php GetMaxPoints::getMax();?>"/>
 	        	</div>
 	         </div>
 	         <div class="col-lg-0 col-md-0 col-sm-0 col-xs-0"></div>
@@ -76,11 +75,7 @@ class ChallengeView {
 	         </div>
 	         <div class="col-lg-3 col-md-3 col-sm-2 col-xs-0"></div>
 	        </div>
-		  	
-		  	
-	  		
-	  		
-	  	 </form>
+	  	  </form>
 	  	 </div>
 		 <div class="col-lg-3 col-md-3 col-sm-2 col-xs-0"></div>
 		</div>
