@@ -69,7 +69,7 @@ class ChallengeView {
 		  	<div id="add-users" class="add-users-class">
 		  		<div class="hint"><span class="makeMeColor">Search:</span><input type="text" onkeyup="showHint(this.value)">
 		  			<span class="makeMeColor">Suggestions: </span><span id="txtHint"></span></div>
-				<textarea class="form-control" rows="3" name="users"><?php GetFriends::getAll($_SESSION['user_session']);?></textarea>
+				<textarea class="form-control" rows="3" name="users"></textarea>
 			</div>			
 		  	
 		  	
@@ -88,34 +88,7 @@ class ChallengeView {
 		</div>
 	  </div>
 	 </div>
-	</div>
-		
-		
-		
-	<!-- Scripts here...Need to put into js file -->	
-  	<script type='text/javascript'>
-    /* attach a submit handler to the form */
-    $("#challenge-form1").submit(function(event) {
-
-      /* stop form from submitting normally */
-      event.preventDefault();
-
-      /* get some values from elements on the page: */
-      var $form = $( this ),
-          url = $form.attr( 'action' );
-
-      /* Send the data using post */
-      var posting = $.post( url, { name: $('#name').val(), name2: $('#name2').val() } );
-
-      /* Alerts the results */
-      posting.done(function( data ) {
-        alert('success');
-      });
-    });
-	</script>
-  	
-
-  	
+	</div>	
   	<?php 
   }
 }

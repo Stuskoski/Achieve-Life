@@ -57,7 +57,7 @@ body{
 
 .add-user-class{
 	display:show;
-	opacity: 0.7;
+	opacity: 0.8;
 	color:#000;
 	margin-bottom: 10px;
 	max-width: 450px;
@@ -69,6 +69,7 @@ body{
 
 #txtHint{
 	color:white;
+	opacity:1.0 !important;
 }
 
 .select-friends{
