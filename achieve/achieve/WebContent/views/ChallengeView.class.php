@@ -67,9 +67,9 @@ class ChallengeView {
 		  	
 		  	<div><input id="btn-add" type="button" class="btn btn-challenge" value="Add Users"></div>
 		  	<div id="add-users" class="add-users-class">
-		  		<div class="hint"><span class="makeMeColor">Search:</span><input type="text" onkeyup="showHint(this.value)">
+		  		<div class="hint"><span class="makeMeColor">Search:</span><input type="text" onkeyup="showHint(this.value)" onsubmit="enterHint(this.value)">
 		  			<span class="makeMeColor">Suggestions: </span><span id="txtHint"></span></div>
-				<textarea class="form-control" rows="3" name="users"></textarea>
+				<textarea class="form-control" rows="3" name="users" required></textarea>
 			</div>			
 		  	
 		  	

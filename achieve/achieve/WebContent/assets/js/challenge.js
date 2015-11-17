@@ -24,3 +24,8 @@ function showHint(str) {
         xmlhttp.send();
     }
 }
+
+//Prevents the user from being able to submit the form with pressing enter.  Need this to keep the form from submitting when pressing enter in the search hint form.
+$(document).on("keypress", ":input:not(textarea)", function(event) {
+    return event.keyCode != 13;
+});

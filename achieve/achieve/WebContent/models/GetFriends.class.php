@@ -29,11 +29,14 @@ class GetFriends{
 				
 				/***Parse through the list***/
 				while ($row = $stmt->fetch()) {
-				   echo $row[0] . "\n";
+				   //echo $row[0] . "\n";
+				   $ary[]=$row[0];
 				 }
 				
 				/***Clear the connection to the database***/
 				Database::clearDB();
+				
+				return $ary;
 				
 				
 			}catch(Exception $e){
