@@ -16,6 +16,7 @@ class LoginView {
         <button class="btn-custom btn-one" type="submit">Sign in</button>
         <button class="btn-custom btn-one" type="reset">Clear</button>
       </form>
+      <div class="center"><i>New Users <a href="signup">Can Signup Here</a></i></div>
     </div> <!-- /container -->
    </div>
   </div>
