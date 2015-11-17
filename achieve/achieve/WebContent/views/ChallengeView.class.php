@@ -31,8 +31,8 @@ class ChallengeView {
 		        </div>
 			
 		   
-		  <!-- Create a challenge form. Submitted with ajax -->
-		  <form id="challenge-form" action="" method="post">
+		  <!-- Create a challenge form. Submitted with ajax or php -->
+		  <form id="challenge-form" action="models/AddChallenge.class.php" method="post">
 	  	
 	  	
 			<div class="row scroll-me">
@@ -43,11 +43,11 @@ class ChallengeView {
 			  		//get the picture from the database
 			  		ChallengeController::getPic($_SESSION['user_session']);
 			  		?>
-			  		<!--<img src ="assets/img/generic.png" alt="Profile Picture" style="width:135px;height:135px;">-->
+			  		<!--<img src ="assets/img/generic.png" alt="Profile Picture" style="width:135px;height:135px;">   default pic, database looks for pic, default if not found-->
 			  		<h4>Name of Challenge</h4>
 	            	<input class="submit-form-name" type="text" name="nameOfChallenge" maxlength="30" pattern="[a-zA-Z!? ]{2,30}" title="Please enter a valid name using A-Z" placeholder="Challenge Name" required>
 	            	<h4>Number of Points</h4>
-	            	<input class ="submit-form-name" type='number' size='10' id='numberinput' name='mynumber' value='0' step="5" min="0"/>
+	            	<input class ="submit-form-name" type='number' size='10' id='numberinput' name='numPoints' value='0' step="5" min="0"/>
 	        	</div>
 	         </div>
 	         <div class="col-lg-0 col-md-0 col-sm-0 col-xs-0"></div>
@@ -57,11 +57,11 @@ class ChallengeView {
         	
         	<div>
         	    <h4>Challenge Description</h4>
-		  		<textarea class="form-control submit-form" rows="3" id="comment" name="comments" placeholder="Description" required></textarea>
+		  		<textarea class="form-control submit-form" rows="3" id="comment" name="description" placeholder="Description" required></textarea>
 			</div>
 			
 			<div>
-				<textarea class="form-control submit-form" rows="3" id="comment" name="comments" placeholder="Users" required></textarea>
+				<textarea class="form-control submit-form" rows="3" id="comment" name="users" placeholder="Users" required></textarea>
 			</div>
 		  	
 		  	<div><input id="btn-add" type="button" class="btn btn-challenge" value="Add Users"></div>
@@ -71,7 +71,7 @@ class ChallengeView {
 			 <div class="col-lg-3 col-md-2 col-sm-2 col-xs-0"></div>
 			 <div class="col-lg-8 col-md-7 col-sm-8 col-xs-12">	  	
 			  	<div class="form-group">	
-		  		  <div><input type="submit" class="btn btn-challenge" value="Send Challenge"></div>
+		  		  <div><input type="submit" class="btn btn-challenge" value="Send Challenge" name="submit"></div>
 		  		</div>
 	         </div>
 	         <div class="col-lg-3 col-md-3 col-sm-2 col-xs-0"></div>

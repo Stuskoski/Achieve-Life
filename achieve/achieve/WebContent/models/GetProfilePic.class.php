@@ -1,6 +1,7 @@
 <?php
 class GetProfilePic{
 	public static function getPic($user){
+	try{
 		//connect to DB, AIM
 		$dbh = Database::getDB();
 
@@ -24,7 +25,7 @@ class GetProfilePic{
 		{
 			/*** set the headers and display the image ***/
 			//header("Content-type: ".$array['image_type']);
-			echo '<img alt="Profile Picture" style="width:135px;height:135px;" src="data:image/jpeg;base64,'.base64_encode( $array['image'] ).'"/>';
+			echo '<img alt="Profile Picture" style="width:105px;height:130px;" src="data:image/jpeg;base64,'.base64_encode( $array['image'] ).'"/>';
 		
 			/*** output the image ***/
 			//echo $array['image'];
@@ -34,5 +35,8 @@ class GetProfilePic{
 			echo '<img src ="assets/img/generic.png" alt="Profile Picture" style="width:135px;height:135px;">';
 		}
 		
+	}catch(Exception $e){
+		echo "<br>" . $e->getMessage() . "</b>";	
 	}
+  }
 }
