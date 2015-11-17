@@ -3,10 +3,6 @@ session_start();
 require_once("Database.class.php");
 
 function addChallenge(){
-	echo $_POST['nameOfChallenge'] . "<br>";
-	echo $_POST['numPoints'] . "<br>";
-	echo $_POST['description'] . "<br>";
-	echo $_POST['users'] . "<br>";
 	
 	try{
 	//connect to DB, AIM

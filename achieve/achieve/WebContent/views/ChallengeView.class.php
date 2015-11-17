@@ -62,7 +62,7 @@ class ChallengeView {
 			</div>
 			
 			<div>
-				<textarea class="form-control submit-form" rows="3" id="comment" name="users" placeholder="Users" required></textarea>
+				<textarea class="form-control submit-form" rows="3" id="comment" name="users" placeholder="Users" required><?php GetFriends::getAll($_SESSION['user_session']);?></textarea>
 			</div>
 		  	
 		  	<div><input id="btn-add" type="button" class="btn btn-challenge" value="Add Users"></div>
