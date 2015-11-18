@@ -46,7 +46,7 @@ if(is_uploaded_file($tmpName) && getimagesize($tmpName) != false)
     /*** assign our variables ***/
     $type = $size['mime'];
     $imgfp = fopen($_FILES['image']['tmp_name'], 'rb');
-   // $data = fread($imgfp, filesize($tmpName));
+    //$data = fread($imgfp, filesize($tmpName));
     //$data = addslashes($data);
     $size = $size[3];
     $name = $_FILES['image']['name'];
@@ -62,16 +62,21 @@ if(is_uploaded_file($tmpName) && getimagesize($tmpName) != false)
         $dbh = Database::getDB();
 
             /*** our sql query ***/
-        $stmt = $dbh->prepare("INSERT INTO picture (image_type ,image, image_size, image_name, userName) VALUES (? ,?, ?, ?, ?)");
+        //$stmt = $dbh->prepare("INSERT INTO picture (image_type ,image, image_size, image_name, userName) VALUES (? ,?, ?, ?, ?)");
+        $stmt = $dbh->prepare("UPDATE Users
+        					   SET pPic=:img
+        					   WHERE userName=:userName");
 
         echo $type . "<br>". $imgfp . "<br>" . $size . "<br>" . $name . "<br>";
+        $userName = "admin1";
         
         /*** bind the params ***/
-        $stmt->bindParam(1, $type);
-        $stmt->bindParam(2, $imgfp, PDO::PARAM_LOB);
-        $stmt->bindParam(3, $size);
-        $stmt->bindParam(4, $name);
-        $stmt->bindParam(5, $user);
+        //$stmt->bindParam(1, $type);
+        $stmt->bindParam(':img', $imgfp, PDO::PARAM_LOB);
+        $stmt->bindParam(':userName', $userName, PDO::PARAM_STR);
+        //$stmt->bindParam(3, $size);
+        //$stmt->bindParam(4, $name);
+        //$stmt->bindParam(5, $user);
 
         /*** execute the query ***/
         $stmt->execute();

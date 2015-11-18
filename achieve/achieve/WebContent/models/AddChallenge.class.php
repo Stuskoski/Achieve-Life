@@ -1,12 +1,11 @@
 <?php
 session_start();
 require_once("Database.class.php");
+require_once("GetFriends.class.php");
 
 function addChallenge(){
-	echo $_POST['nameOfChallenge'] . "<br>";
-	echo $_POST['numPoints'] . "<br>";
-	echo $_POST['description'] . "<br>";
-	echo $_POST['users'] . "<br>";
+	
+if(checkFriends()){
 	
 	try{
 	//connect to DB, AIM
@@ -87,7 +86,50 @@ function addChallenge(){
 	header("location:http://localhost/achieve/dashboard");
 }catch(Exception $e){
 	echo "<br>" . $e->getMessage() . "</b>";
+  }
  }
+}
+
+//check if the challenge has valid friends
+function checkFriends(){
+	$tok = trim(strtolower(strtok($_POST['users'], " \n")), " \n");
+	while ($tok !== false) {
+		$array[]=trim(strtolower($tok), " \n");
+		$tok = strtok(" \n\t");
+	}
+	
+	//get the friends for the user
+	$str= GetFriends::getAll($_SESSION['user_session']);
+
+	$friends = count($str);
+	$challenge = count($array);
+
+	
+	for($i=0; $i<$challenge; $i++){
+		for($j=0; $j<$friends;$j++){
+			if(strcmp($array[$i], $str[$j]) !== 0){
+				echo "array=" . trim($array[$i], " \t\n\r\0\x0B") . "   str=" . $str[$j];
+				
+			}
+		}
+	}
+	
+	
+	$flag=0;
+	foreach($array as $val){
+		$val = trim($val, " \n\t");
+		if(!in_array($val, $str)){
+			$flag = $flag+1;
+		}
+	}
+
+	//If there was a friend added that is not in users friend list, return 0 and don't submit challenge.  Else, submit challenge.
+	if($flag>0){
+	 return 1;
+	}
+	else{
+	 return 1;
+	}
 }
 
 if(isset($_POST['submit'])){

@@ -34,7 +34,7 @@ CREATE TABLE Users (
   title				varchar(40) COLLATE utf8_unicode_ci,
   pCount			int(10),
   aCount			int(4),
-  pPic				BLOB,
+  pPic				longblob NOT NULL,
   rank				int(3),
   honesty			int(2),
   dateCreated       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -71,6 +71,30 @@ CREATE TABLE Challenges (
   FOREIGN KEY (userName) REFERENCES Users(userName)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+DROP TABLE if EXISTS Guilds;
+CREATE TABLE Guilds (
+  gid				int(10) NOT NULL AUTO_INCREMENT,
+  name				varchar (255) NOT NULL COLLATE utf8_unicode_ci,
+  description		varchar (255) NOT NULL COLLATE utf8_unicode_ci,
+  members			varchar (255) COLLATE utf8_unicode_ci,
+  challenges		varchar (255) COLLATE utf8_unicode_ci,
+  creator			varchar(30) NOT NULL COLLATE utf8_unicode_ci,
+  dateCreated		TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (gid),
+  FOREIGN KEY (creator) REFERENCES Users(userName)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+DROP TABLE if EXISTS Friends;
+CREATE TABLE Friends (
+  rid			int(10) NOT NULL AUTO_INCREMENT, 
+  user1			varchar(30) NOT NULL COLLATE utf8_unicode_ci,
+  user2			varchar(30) NOT NULL COLLATE utf8_unicode_ci,
+  dateCreated   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (rid),
+  FOREIGN KEY (user1) REFERENCES Users(userName),
+  FOREIGN KEY (user2) REFERENCES Users(userName)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 	   
@@ -89,3 +113,10 @@ INSERT INTO Users (uid, firstName, lastName, userName, email, password, gender, 
 	   ('3', 'Michael', 'Murata', 'admin2', 'Murata_m33@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', LOAD_FILE('/home/stus/Desktop/joust/generic.png'), 'Admin');
 INSERT INTO Users (uid, firstName, lastName, userName, email, password, gender, pPic, title) VALUES 
 	   ('4', 'Sean', 'Butcher', 'admin3', 'butcher.sean@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', LOAD_FILE('/home/stus/Desktop/joust/generic.png'), 'Admin');
+	   
+INSERT INTO Friends (rid, user1, user2) VALUES 
+	   ('1', 'admin1', 'admin2');
+INSERT INTO Friends (rid, user1, user2) VALUES 
+   	   ('2', 'admin1', 'admin3');
+INSERT INTO Friends (rid, user1, user2) VALUES 
+	   ('3', 'admin2', 'admin3');

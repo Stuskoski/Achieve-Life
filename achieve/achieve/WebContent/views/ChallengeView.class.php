@@ -9,6 +9,10 @@ class ChallengeView {
   	}
   	
   	?>
+  	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   	<script src="assets/js/challenge.js"></script> 
   	<link href="assets/css/challenge.css" rel="stylesheet">
 	  <div id="dashboard">
@@ -60,12 +64,13 @@ class ChallengeView {
         	    <h4>Challenge Description</h4>
 		  		<textarea class="form-control submit-form" rows="3" id="comment" name="description" placeholder="Description" required></textarea>
 			</div>
-			
-			<div>
-				<textarea class="form-control submit-form" rows="3" id="comment" name="users" placeholder="Users" required></textarea>
-			</div>
 		  	
 		  	<div><input id="btn-add" type="button" class="btn btn-challenge" value="Add Users"></div>
+		  	<div id="add-users" class="add-users-class">
+		  		<div class="hint"><span class="makeMeColor">Search:</span><input type="text" onkeyup="showHint(this.value)" onsubmit="enterHint(this.value)">
+		  			<span class="makeMeColor">Suggestions: </span><span id="txtHint"></span></div>
+				<textarea class="form-control" rows="3" name="users" required></textarea>
+			</div>			
 		  	
 		  	
 		  	<div class="row scroll-me">
@@ -83,34 +88,7 @@ class ChallengeView {
 		</div>
 	  </div>
 	 </div>
-	</div>
-		
-		
-		
-	<!-- Scripts here...Need to put into js file -->	
-  	<script type='text/javascript'>
-    /* attach a submit handler to the form */
-    $("#challenge-form1").submit(function(event) {
-
-      /* stop form from submitting normally */
-      event.preventDefault();
-
-      /* get some values from elements on the page: */
-      var $form = $( this ),
-          url = $form.attr( 'action' );
-
-      /* Send the data using post */
-      var posting = $.post( url, { name: $('#name').val(), name2: $('#name2').val() } );
-
-      /* Alerts the results */
-      posting.done(function( data ) {
-        alert('success');
-      });
-    });
-	</script>
-  	
-
-  	
+	</div>	
   	<?php 
   }
 }
