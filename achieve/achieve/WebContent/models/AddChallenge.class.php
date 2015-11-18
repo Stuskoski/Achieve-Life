@@ -82,8 +82,8 @@ if(checkFriends()){
 	//Clear the connection to the database
 	Database::clearDB();
 	
-	//header( "refresh:0;url=localhost/achieve" );
-	header("location:http://localhost/achieve/dashboard");
+	header( "location:../challenge" );
+	//header("location:http://localhost/achieve/dashboard");
 }catch(Exception $e){
 	echo "<br>" . $e->getMessage() . "</b>";
   }
@@ -91,13 +91,12 @@ if(checkFriends()){
  	//echo $_POST['nameOfChallenge'] . "\n";
  	//echo $_POST['numPoints'] . "\n";
  	//echo $_POST['description'] . "\n";
- 	$_POST['nameOfChallenge'];
- 	$_POST['numPoints'];
- 	$_POST['description'];
- 	
+ 	$_SESSION['nameOfChallenge'] = $_POST['nameOfChallenge'];
+ 	$_SESSION['numPoints'] = $_POST['numPoints'];
+ 	$_SESSION['description'] = $_POST['description'];
 
- 	
- 	header("location:http://localhost/achieve/challenge");
+ 	header("location:../challenge");
+ 	//header("location:http://localhost/achieve/challenge");
  }
 }
 
