@@ -50,9 +50,16 @@ class ChallengeView {
 			  		</div>
 			  		<!--<img src ="assets/img/generic.png" alt="Profile Picture" style="width:135px;height:135px;">   default pic, database looks for pic, default if not found-->
 			  		<h4>Name of Challenge</h4>
-	            	<input class="submit-form-name" type="text" name="nameOfChallenge" maxlength="30" pattern="[a-zA-Z!? ]{2,30}" title="Please enter a valid name using A-Z" placeholder="Challenge Name" required>
+	            	<input class="submit-form-name" type="text" name="nameOfChallenge" maxlength="30" pattern="[a-zA-Z!? ]{2,30}" title="Please enter a valid name using A-Z" placeholder="Challenge Name" required
+	            	value="<?php if(isset($_POST['nameOfChallenge'])){
+	            							echo $_POST['nameOfChallenge'];}
+	            		?>">
 	            	<h4>Number of Points</h4>
-	            	<input class ="submit-form-name" type='number' id='numberinput' name='numPoints' value='5' step="5" min="5" max="<?php GetMaxPoints::getMax();?>"/>
+	            	<input class ="submit-form-name" type='number' id='numberinput' name='numPoints' value="<?php if(isset($_POST['numPoints'])){
+	            																									echo $_POST['numPoints'];
+	            																								  }else{
+	            																								    echo "5";}
+	            																								    ?>" step="5" min="5" max="<?php GetMaxPoints::getMax();?>"/>
 	        	</div>
 	         </div>
 	         <div class="col-lg-0 col-md-0 col-sm-0 col-xs-0"></div>
@@ -62,14 +69,15 @@ class ChallengeView {
         	
         	<div>
         	    <h4>Challenge Description</h4>
-		  		<textarea class="form-control submit-form" rows="3" id="comment" name="description" placeholder="Description" required></textarea>
+		  		<textarea class="form-control submit-form" rows="3" id="comment" name="description" placeholder="Description" required><?php if(isset($_POST['description'])){
+		  																																		echo $_POST['description'];}?></textarea>
 			</div>
 		  	
 		  	<div><input id="btn-add" type="button" class="btn btn-challenge" value="Add Users"></div>
 		  	<div id="add-users" class="add-users-class">
 		  		<div class="hint"><span class="makeMeColor">Search:</span><input type="text" onkeyup="showHint(this.value)" onsubmit="enterHint(this.value)">
 		  			<span class="makeMeColor">Suggestions: </span><span id="txtHint"></span></div>
-				<textarea class="form-control" rows="3" name="users" required></textarea>
+				<textarea class="form-control" rows="3" name="users" required placeholder="Enter friends to send challenge to.  Seperate by commas."></textarea>
 			</div>			
 		  	
 		  	

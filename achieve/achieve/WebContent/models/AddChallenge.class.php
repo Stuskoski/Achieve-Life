@@ -87,50 +87,45 @@ if(checkFriends()){
 }catch(Exception $e){
 	echo "<br>" . $e->getMessage() . "</b>";
   }
+ }else{
+ 	//echo $_POST['nameOfChallenge'] . "\n";
+ 	//echo $_POST['numPoints'] . "\n";
+ 	//echo $_POST['description'] . "\n";
+ 	$_POST['nameOfChallenge'];
+ 	$_POST['numPoints'];
+ 	$_POST['description'];
+ 	
+
+ 	
+ 	header("location:http://localhost/achieve/challenge");
  }
 }
 
 //check if the challenge has valid friends
 function checkFriends(){
-	$tok = trim(strtolower(strtok($_POST['users'], " \n")), " \n");
-	while ($tok !== false) {
-		$array[]=trim(strtolower($tok), " \n");
-		$tok = strtok(" \n\t");
-	}
+	$flag = 0;
 	
 	//get the friends for the user
 	$str= GetFriends::getAll($_SESSION['user_session']);
-
-	$friends = count($str);
-	$challenge = count($array);
-
 	
-	for($i=0; $i<$challenge; $i++){
-		for($j=0; $j<$friends;$j++){
-			if(strcmp($array[$i], $str[$j]) !== 0){
-				echo "array=" . trim($array[$i], " \t\n\r\0\x0B") . "   str=" . $str[$j];
-				
-			}
-		}
-	}
+	//tokenize the string by commas
+	$temp = explode(',', $_POST['users']);
 	
-	
-	$flag=0;
-	foreach($array as $val){
-		$val = trim($val, " \n\t");
-		if(!in_array($val, $str)){
+	foreach($temp as $value){
+		$value = strtolower($value);
+		if(!in_array($value, $str)){//if value is not in str then add to the flag
 			$flag = $flag+1;
-		}
+		}	
 	}
-
+	
 	//If there was a friend added that is not in users friend list, return 0 and don't submit challenge.  Else, submit challenge.
 	if($flag>0){
-	 return 1;
+	 return false;
 	}
 	else{
-	 return 1;
+	 return true;
 	}
-}
+}//end checkFriends() function
 
 if(isset($_POST['submit'])){
 	addChallenge();
