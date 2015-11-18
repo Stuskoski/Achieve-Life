@@ -71,6 +71,19 @@ CREATE TABLE Challenges (
   FOREIGN KEY (userName) REFERENCES Users(userName)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+DROP TABLE if EXISTS Guilds;
+CREATE TABLE Guilds (
+  gid				int(10) NOT NULL AUTO_INCREMENT,
+  name				varchar (255) NOT NULL COLLATE utf8_unicode_ci,
+  description		varchar (255) NOT NULL COLLATE utf8_unicode_ci,
+  members			varchar (255) COLLATE utf8_unicode_ci,
+  challenges		varchar (255) COLLATE utf8_unicode_ci,
+  creator			varchar(30) NOT NULL COLLATE utf8_unicode_ci,
+  dateCreated		TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (gid),
+  FOREIGN KEY (creator) REFERENCES Users(userName)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 DROP TABLE if EXISTS Friends;
 CREATE TABLE Friends (
