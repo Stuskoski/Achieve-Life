@@ -115,7 +115,9 @@ DROP TABLE if EXISTS Submissions;
 CREATE TABLE Submissions (
   sid			int(10) NOT NULL AUTO_INCREMENT, 
   user1			varchar(30) NOT NULL COLLATE utf8_unicode_ci,
-  cid			int(10) NOT NULL, 
+  cid			int(10) NOT NULL,
+  submitPic		longblob,
+  note			varchar(255) COLLATE utf8_unicode_ci,
   dateCreated   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (sid),
   FOREIGN KEY (user1) REFERENCES Users(userName),
