@@ -29,10 +29,10 @@ class GetChallenges{
 					?>
 					<div class="container display-challenges">
 						<?php echo '<img alt="Challenge Picture" class="challengePic" style="width:60px;height:60px;" src="data:image/jpeg;base64,'.base64_encode( $row['cPic'] ).'"/>';?>
-						<?php echo '<div class = "challengeName">' . $row['name'] . '</div>';?>
-						<?php echo '<div class = "challengePoints">' . $row['points'] . '</div>';?>
-						<?php echo '<div class = "challengeDescription">' . $row['description'] . '</div>';?>
-						<!--<?php echo '<div class = "challengeUsers">' . $row['users'] . '</div>';?>-->		
+						<?php echo '<div><span class="challengeName">' . $row['name'] . '</span></div>';?>
+						<?php echo '<div><span class="challengePoints">' . $row['points'] . '</span></div>';?>
+						<?php echo '<div><span class="challengeDescription">' . $row['description'] . '</span></div>';?>
+						<?php echo '<a href="models/DeleteChallenge.php?id=' . $row['cid'] . '" class = "delete">Delete</a>' ?>		
 					</div>
 					
 					<?php 
@@ -41,7 +41,7 @@ class GetChallenges{
 				}
 				
 				
-
+				//<?php echo '<div class = "challengeName">' . $row['name'] . '</div>';
 				
 		
 				/***Clear the connection to the database***/
