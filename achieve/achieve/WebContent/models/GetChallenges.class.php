@@ -28,11 +28,11 @@ class GetChallenges{
 				while ($row = $stmt->fetch()) {
 					?>
 					<div class="container display-challenges">
-						<?php echo '<img alt="Challenge Picture" style="width:60px;height:60px;" src="data:image/jpeg;base64,'.base64_encode( $row['cPic'] ).'"/>';?>
-						<?php echo $row['name'];?>
-						<?php echo $row['points'];?>
-						<?php echo $row['description'];?>
-						<?php echo $row['users'];?>		
+						<?php echo '<img alt="Challenge Picture" class="challengePic" style="width:60px;height:60px;" src="data:image/jpeg;base64,'.base64_encode( $row['cPic'] ).'"/>';?>
+						<?php echo '<div class = "challengeName">' . $row['name'] . '</div>';?>
+						<?php echo '<div class = "challengePoints">' . $row['points'] . '</div>';?>
+						<?php echo '<div class = "challengeDescription">' . $row['description'] . '</div>';?>
+						<!--<?php echo '<div class = "challengeUsers">' . $row['users'] . '</div>';?>-->		
 					</div>
 					
 					<?php 
