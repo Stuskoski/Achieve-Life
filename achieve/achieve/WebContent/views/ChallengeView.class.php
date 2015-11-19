@@ -33,7 +33,6 @@ class ChallengeView {
 				 </div>
 		         <div class="col-lg-3 col-md-2 col-sm-2 col-xs-0"></div>
 		        </div>
-			
 		  <!-- Create a challenge form. Submitted with ajax or php -->
 		  <form id="challenge-form" action="models/AddChallenge.class.php" method="post">
 	  	
@@ -51,12 +50,14 @@ class ChallengeView {
 			  		<!--<img src ="assets/img/generic.png" alt="Profile Picture" style="width:135px;height:135px;">   default pic, database looks for pic, default if not found-->
 			  		<h4>Name of Challenge</h4>
 	            	<input class="submit-form-name" type="text" name="nameOfChallenge" maxlength="30" pattern="[a-zA-Z!? ]{2,30}" title="Please enter a valid name using A-Z" placeholder="Challenge Name" required
-	            	value="<?php if(isset($_POST['nameOfChallenge'])){
-	            							echo $_POST['nameOfChallenge'];}
+	            	value="<?php if(isset($_SESSION['nameOfChallenge'])){
+	            							echo $_SESSION['nameOfChallenge'];
+	            							unset ($_SESSION['nameOfChallenge']);}
 	            		?>">
 	            	<h4>Number of Points</h4>
-	            	<input class ="submit-form-name" type='number' id='numberinput' name='numPoints' value="<?php if(isset($_POST['numPoints'])){
-	            																									echo $_POST['numPoints'];
+	            	<input class ="submit-form-name" type='number' id='numberinput' name='numPoints' value="<?php if(isset($_SESSION['numPoints'])){
+	            																									echo $_SESSION['numPoints'];
+	            																									unset ($_SESSION['numPoints']);
 	            																								  }else{
 	            																								    echo "5";}
 	            																								    ?>" step="5" min="5" max="<?php GetMaxPoints::getMax();?>"/>
@@ -69,8 +70,9 @@ class ChallengeView {
         	
         	<div>
         	    <h4>Challenge Description</h4>
-		  		<textarea class="form-control submit-form" rows="3" id="comment" name="description" placeholder="Description" required><?php if(isset($_POST['description'])){
-		  																																		echo $_POST['description'];}?></textarea>
+		  		<textarea class="form-control submit-form" rows="3" id="comment" name="description" placeholder="Description" required><?php if(isset($_SESSION['description'])){
+		  																																		echo $_SESSION['description'];
+		  																																		unset($_SESSION['description']);}?></textarea>
 			</div>
 		  	
 		  	<div><input id="btn-add" type="button" class="btn btn-challenge" value="Add Users"></div>

@@ -79,11 +79,35 @@ if(checkFriends()){
 	//execute
 	$stmt->execute();
 	
+	$stmt =  $dbh->prepare("SELECT LAST_INSERT_ID()");
+	
+	//execute
+	$stmt->execute();
+	
+	$stmt->setFetchMode(PDO::FETCH_NUM);
+	
+	$lastAdded = $stmt->fetch();
+	
+	$temp = explode(',', $_POST['users']);
+
+	//Creates a challengeUser that references each challenge, much faster than string functions
+	foreach($temp as $value){
+	//Get ready to insert into Challengeuser
+	$stmt =  $dbh->prepare("INSERT INTO Challengeuser(user1, cid)
+							Values(:user1, :cid)");
+	
+	$user1 = $value;
+	$stmt->bindParam ( ':user1', $user1, PDO::PARAM_STR );
+	$stmt->bindParam ( ':cid', $lastAdded['0'], PDO::PARAM_INT);
+	
+	$stmt->execute();
+	}
+	
 	//Clear the connection to the database
 	Database::clearDB();
 	
-	//header( "refresh:0;url=localhost/achieve" );
-	header("location:http://localhost/achieve/dashboard");
+	header( "location:../dashboard" );
+	//header("location:http://localhost/achieve/dashboard");
 }catch(Exception $e){
 	echo "<br>" . $e->getMessage() . "</b>";
   }
@@ -91,13 +115,12 @@ if(checkFriends()){
  	//echo $_POST['nameOfChallenge'] . "\n";
  	//echo $_POST['numPoints'] . "\n";
  	//echo $_POST['description'] . "\n";
- 	$_POST['nameOfChallenge'];
- 	$_POST['numPoints'];
- 	$_POST['description'];
- 	
+ 	$_SESSION['nameOfChallenge'] = $_POST['nameOfChallenge'];
+ 	$_SESSION['numPoints'] = $_POST['numPoints'];
+ 	$_SESSION['description'] = $_POST['description'];
 
- 	
- 	header("location:http://localhost/achieve/challenge");
+ 	header("location:../challenge");
+ 	//header("location:http://localhost/achieve/challenge");
  }
 }
 
