@@ -32,7 +32,7 @@ class GetChallenges{
 						<?php echo '<div><span class="challengeName">' . $row['name'] . '</span></div>';?>
 						<?php echo '<div><span class="challengePoints">' . $row['points'] . '</span></div>';?>
 						<?php echo '<div><span class="challengeDescription">' . $row['description'] . '</span></div>';?>
-						<?php echo '<a href="models/DeleteChallenge.php?id=' . $row['cid'] . '">Delete</a>' ?>		
+						<?php echo '<a href="models/DeleteChallenge.php?id=' . $row['cid'] . '" class = "delete">Delete</a>' ?>		
 					</div>
 					
 					<?php 

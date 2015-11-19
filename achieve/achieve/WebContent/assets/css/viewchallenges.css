@@ -61,12 +61,10 @@ body{
     bottom: 80;
     left:75;
     font-family: Goudy Old Style,Garamond,Big Caslon,Times New Roman,serif;
-    font-size: 16px;
-
-	
+    font-size: 16px;	
 }
 
-a{
+.delete{
 	position: absolute;
 	bottom: 8;
 	right: 3;
