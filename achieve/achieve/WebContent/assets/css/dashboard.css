@@ -12,3 +12,18 @@
        min-height: 970px;
        padding-bottom: 40px;
    }
+   
+a{
+	color:#B20000;
+	font-weight:900;
+}
+
+a:visited{
+	color:#B20000;
+	font-weight:900;
+}
+
+
+.link{
+	margin-bottom:30px;
+}

@@ -44,6 +44,11 @@
 			ViewChallengesController::show();
 			MasterView::showFooter();
 			break;
+		case "verifychallenges":
+			MasterView::showHeader();
+			VerifyChallengesController::show();
+			MasterView::showFooter();
+			break;
 		default:
 			MasterView::showHeader();
 			DashboardController::show();
