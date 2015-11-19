@@ -84,6 +84,19 @@ CREATE TABLE Friends (
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
+
+DROP TABLE if EXISTS Challengeuser;
+CREATE TABLE Challengeuser (
+  cuid			int(10) NOT NULL AUTO_INCREMENT, 
+  user1			varchar(30) NOT NULL COLLATE utf8_unicode_ci,
+  cid			int(10) NOT NULL, 
+  dateCreated   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (cuid),
+  FOREIGN KEY (user1) REFERENCES Users(userName),
+  FOREIGN KEY (cid) REFERENCES Challenges(cid)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
 	   
 INSERT INTO Admins (uid, firstName, lastName, userName, email, password, gender, title) VALUES 
 	   ('1', 'Augustus', 'Rutkoski', 'admin1', 'stuskoski@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', 'Admin');

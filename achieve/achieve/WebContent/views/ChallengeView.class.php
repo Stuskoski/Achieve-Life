@@ -51,11 +51,13 @@ class ChallengeView {
 			  		<h4>Name of Challenge</h4>
 	            	<input class="submit-form-name" type="text" name="nameOfChallenge" maxlength="30" pattern="[a-zA-Z!? ]{2,30}" title="Please enter a valid name using A-Z" placeholder="Challenge Name" required
 	            	value="<?php if(isset($_SESSION['nameOfChallenge'])){
-	            							echo $_SESSION['nameOfChallenge'];}
+	            							echo $_SESSION['nameOfChallenge'];
+	            							unset ($_SESSION['nameOfChallenge']);}
 	            		?>">
 	            	<h4>Number of Points</h4>
 	            	<input class ="submit-form-name" type='number' id='numberinput' name='numPoints' value="<?php if(isset($_SESSION['numPoints'])){
 	            																									echo $_SESSION['numPoints'];
+	            																									unset ($_SESSION['numPoints']);
 	            																								  }else{
 	            																								    echo "5";}
 	            																								    ?>" step="5" min="5" max="<?php GetMaxPoints::getMax();?>"/>
@@ -69,7 +71,8 @@ class ChallengeView {
         	<div>
         	    <h4>Challenge Description</h4>
 		  		<textarea class="form-control submit-form" rows="3" id="comment" name="description" placeholder="Description" required><?php if(isset($_SESSION['description'])){
-		  																																		echo $_SESSION['description'];}?></textarea>
+		  																																		echo $_SESSION['description'];
+		  																																		unset($_SESSION['description']);}?></textarea>
 			</div>
 		  	
 		  	<div><input id="btn-add" type="button" class="btn btn-challenge" value="Add Users"></div>

@@ -35,8 +35,7 @@ CREATE TABLE DEPARTMENT (
   Dnumber				int (1) NOT NULL,
   Mgr_ssn				int(9),
   Mgr_start_date		varchar (10) NOT NULL COLLATE utf8_unicode_ci,
-  PRIMARY KEY (Dnumber),
-  FOREIGN KEY (Dnumber) REFERENCES DEPT_LOCATIONS(Dnumber)
+  PRIMARY KEY (Dnumber)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
