@@ -18,19 +18,18 @@ if(!isset($_SESSION['user_session'])){
 		$dbh = Database::getDB();
 	
 		//check if user is the owner of that challenge
-		$ifuser = $dbh->prepare( "SELECT s.dateCreated, s.note, s.submitPic, s.user1, s.cid, s.sid
-								  FROM Submissions s
-								  JOIN
-								  Challenges c
-								  ON c.cid = s.cid
-							      WHERE s.cid = :cid
-								  " );
+		$ifuser = $dbh->prepare( "SELECT *
+								  FROM Submissions
+								  WHERE sid =:sid");
 	
 		//bind params
-		$ifuser->bindParam ( ':cid', $value, PDO::PARAM_STR );
+		$ifuser->bindParam ( ':sid', $value, PDO::PARAM_STR );
 	
 		//execute
 		$ifuser->execute ();
+
+		$row = $ifuser->fetch ( PDO::FETCH_ASSOC );
+
 
 	
 		Database::clearDB();
@@ -53,20 +52,17 @@ if(!isset($_SESSION['user_session'])){
 					 <div class="col-lg-1 col-md-2 col-sm-2 col-xs-0"></div>
 					 <div class="col-lg-8 col-md-7 col-sm-8 col-xs-12">
 			   			<div id="review-title">
-							<h1>Verify Submissions</h1>
+							<h1>Submission From <?php echo $row['user1'];?></h1>
 						</div>
 					 </div>
 			         <div class="col-lg-3 col-md-2 col-sm-2 col-xs-0"></div>
 			        </div>
-		  	
-		  			<?php 
-		  			//fetch the values
-		  			while($row = $ifuser->fetch ( PDO::FETCH_ASSOC )){
-		  				echo '<div class="linkToVerify"><a href="ViewSubmission.php?id=' . $row['sid'] . '" class = "delete">View Submission From ' . $row['user1'] . '</a></div>';
-		  				//print_r($row);
-		  			}
-		  			?>
-		  	
+		  		
+		  			<div class="container submission">
+		  		    <span class="sub-pic"><?php echo '<img alt="No Picture Submitted" class="challengePic" style="width:360px;height:360px;" src="data:image/jpeg;base64,'.base64_encode( $row['submitPic'] ).'"/>';?></span>
+		  			<span class="sub-date"><?php echo $row['dateCreated'];?></span>
+		  			<h4><?php echo $row['note'];?></h4>
+		  			</div>
 		  	  </div>
 		  	  <div class="col-lg-3 col-md-3 col-sm-2 col-xs-0"></div>
 		  	 </div>

@@ -31,7 +31,7 @@ class GetChallenges{
 						<?php echo '<img alt="Challenge Picture" class="challengePic" style="width:60px;height:60px;" src="data:image/jpeg;base64,'.base64_encode( $row['cPic'] ).'"/>';?>
 						<?php echo '<div><span class="challengeName">' . $row['name'] . '</span></div>';?>
 						<?php echo '<div><span class="challengePoints">' . $row['points'] . '</span></div>';?>
-						<?php echo '<div><span class="challengeDescription">' . $row['description'] . '</span></div>';?>
+						<?php echo '<div><h4>' . $row['description'] . '</h4></div>';?>
 						<?php echo '<a href="models/DeleteChallenge.php?id=' . $row['cid'] . '" class = "delete">Delete</a>' ?>		
 					</div>
 					
