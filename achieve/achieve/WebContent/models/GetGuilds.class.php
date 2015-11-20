@@ -11,6 +11,7 @@ class GetGuilds{
 				
 				/*** The sql statement ***/
 				$stmt =  $dbh->prepare("SELECT guildName FROM Guilds WHERE user=:user");
+				/***test comment ***/
 				
 				/*** Bind params ***/
 				$stmt->bindParam ( ':user', $user, PDO::PARAM_STR );
