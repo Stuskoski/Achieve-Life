@@ -92,6 +92,30 @@ body{
 	right: 3;
 }
 
+.submit-submission{
+	position: absolute;
+	bottom: 0;
+	right: 135;
+	background-color:#1a1a1a;
+    min-height:20px;
+    max-height:20px;
+    border-radius:30px;
+   -webkit-border-radius:30px;
+   -moz-border-radius:30px;
+    padding:3px 10px 3px 10px;
+   -webkit-transition: all 0.5s ease-in-out;
+   -moz-transition: all 0.5s ease-in-out;
+   -o-transition: all 0.5s ease-in-out;
+   transition: all 0.5s ease-in-out;
+   margin:10px 5px 5px 0px;
+   color:#B20000;
+}
+
+.submit-submission:hover{
+    color:white;
+    text-decoration:none;
+}
+
 h4{
 	padding-top:10px;
 }

@@ -29,3 +29,16 @@ function showHint(str) {
 $(document).on("keypress", ":input:not(textarea)", function(event) {
     return event.keyCode != 13;
 });
+
+//Puts a listener on the send submission button.  Opens a window to upload a picture and a note for the submission
+$("button").on("click", "button", function () {
+	  alert("Hi");
+	});
+
+$(function() {
+	$(document).on("click", '#sub-sub-btn', function() {
+
+	    alert("You have just clicked on ");
+	});
+	  });
+ 

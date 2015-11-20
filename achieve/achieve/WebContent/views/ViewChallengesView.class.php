@@ -1,9 +1,8 @@
 <?php
-
+//View chellenges sent to you
 class ViewChallengesView{
 	public function show(){
 	?>
-	
   	<script src="assets/js/challenge.js"></script> 
   	<link href="assets/css/viewchallenges.css" rel="stylesheet">
 	  <div id="dashboard">
@@ -34,11 +33,7 @@ class ViewChallengesView{
 	  	</div>
 	  </div>
 	 </div>
-	
-	
-	
-	
-	
+	 
 	
 	<?php 
 	}
