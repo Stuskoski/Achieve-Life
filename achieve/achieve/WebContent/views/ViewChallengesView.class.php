@@ -1,10 +1,9 @@
 <?php
-
+//View chellenges sent to you
 class ViewChallengesView{
 	public function show(){
 	?>
-	
-  	<script src="assets/js/challenge.js"></script> 
+  	<script src="assets/js/viewchallenge.js"></script> 
   	<link href="assets/css/viewchallenges.css" rel="stylesheet">
 	  <div id="dashboard">
 	   <div class="overlay">
@@ -25,20 +24,16 @@ class ViewChallengesView{
 				 </div>
 		         <div class="col-lg-3 col-md-2 col-sm-2 col-xs-0"></div>
 		        </div>
-		        
+		        <div class="challenges">
 		        <?php GetChallenges::getC($_SESSION['user_session']);?>
-
+				</div>
 			</div>	
 			<div class="col-lg-3 col-md-3 col-sm-2 col-xs-0"></div>
 			</div>
 	  	</div>
 	  </div>
 	 </div>
-	
-	
-	
-	
-	
+	 
 	
 	<?php 
 	}
