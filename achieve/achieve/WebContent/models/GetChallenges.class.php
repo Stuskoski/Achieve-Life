@@ -33,15 +33,15 @@ class GetChallenges{
 						<?php echo '<div><span class="challengePoints">' . $row['points'] . '</span></div>';?>
 						<?php echo '<div><h4>' . $row['description'] . '</h4></div>';?>
 						<?php echo '<a href="models/DeleteChallenge.php?id=' . $row['cid'] . '" class = "delete">Delete</a>' ?>
-						<?php echo '<button id="sub-sub-btn" class = "submit-submission" value="' . $row['cid'] . '">Create Submission</button>'?>
-						
+						<?php echo '<a href="models/SendSubmission.php?id=' . $row['cid'] . '" class = "submit-sub">Send Submission</a>'?>				
 					</div>
 					
 					<?php 
 					$ary[]=$row;
 					
 				}
-				
+				//<?php echo '<button id="sub-sub-btn" class = "submit-submission" value="' . $row['cid'] . '">Create Submission</button>'
+				//<?php echo '<input type="button" id="sub-sub-btn" class = "submit-submission" value="' . $row['cid'] . '">'
 				//<?php echo '<a href="models/SendSubmission.php?id=' . $row['cid'] . '" class = "submit-submission">Send Submission</a>' 
 				//<?php echo '<div class = "challengeName">' . $row['name'] . '</div>';
 				

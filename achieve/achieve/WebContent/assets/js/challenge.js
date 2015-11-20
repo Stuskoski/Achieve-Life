@@ -31,14 +31,21 @@ $(document).on("keypress", ":input:not(textarea)", function(event) {
 });
 
 //Puts a listener on the send submission button.  Opens a window to upload a picture and a note for the submission
-$("button").on("click", "button", function () {
+$(document).on("click", "button", function () {
 	  alert("Hi");
 	});
 
 $(function() {
 	$(document).on("click", '#sub-sub-btn', function() {
-
-	    alert("You have just clicked on ");
+		window.open('www.google.com', 'window name', '');
 	});
 	  });
+
+$(function() {
+    $(document).on('click', '.submit-submission', function(e) {
+       var x = $("#sub-sub-btn").val();
+       alert(text(x));
+       e.preventDefault();
+    });
+});
  

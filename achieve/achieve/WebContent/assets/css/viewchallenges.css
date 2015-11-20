@@ -92,6 +92,13 @@ body{
 	right: 3;
 }
 
+.submit-sub{
+	position: absolute;
+	bottom: 8;
+	right: 165;
+	font-weight:900;
+}
+
 .submit-submission{
 	position: absolute;
 	bottom: 0;
