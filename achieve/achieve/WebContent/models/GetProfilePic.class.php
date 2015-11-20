@@ -21,7 +21,7 @@ class GetProfilePic{
 		$array = $stmt->fetch();
 		
 		/*** check we have a single image and type ***/
-		if(sizeof($array) == 1)
+		if(sizeof($array) == 1 && $array['pPic']!=null)
 		{
 			/*** set the headers and display the image ***/
 			//header("Content-type: ".$array['image_type']);
