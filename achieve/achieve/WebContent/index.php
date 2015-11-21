@@ -21,8 +21,10 @@
 		case "logout":
 			LogoutController::run();
 			break;
-		case "settings":
+		case "setting":
+			MasterView::showHeader();
 			SettingsController::show();
+			MasterView::showFooter();
 			break;
 		case "signup":
 			MasterView::showHeader();
