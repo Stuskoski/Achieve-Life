@@ -16,7 +16,8 @@ if($id=="*"){
 
 $dbh = Database::getDB();
 
-$qry1 = $dbh->prepare("SELECT c.points, s.user1
+//get the information about the submission and challenge
+$qry1 = $dbh->prepare("SELECT c.points, s.user1, c.cid
 		               FROM submissions s
 					   INNER JOIN
 					   challenges c 
@@ -32,7 +33,7 @@ $qry1->execute ();
 //get the info
 $info = $qry1->fetch ( PDO::FETCH_ASSOC );
 
-
+//add points to correct user
 $qry2 = $dbh->prepare("UPDATE Users
 					   SET points = (points + :points)
 					   WHERE userName = :userName");
@@ -44,7 +45,45 @@ $qry2->bindParam ( ':userName', $info['user1'], PDO::PARAM_STR );
 //execute
 $qry2->execute ();
 
+
+//delete the submissions, and challenge
+$qry3 = $dbh->prepare("DELETE
+					   FROM Submissions
+					   WHERE cid =:cid");
+
+//get the cid from an earlier qry and use that to delete all the submissions
+$qry3->bindParam ( ':cid', $info['cid'], PDO::PARAM_STR );
+
+//execute
+$qry3->execute ();
+
+//delete the challenge users
+$qry4 = $dbh->prepare("DELETE
+					   FROM Challengeuser
+					   WHERE cid =:cid");
+
+//get the cid from an earlier qry and use that to delete all the challenge users
+$qry4->bindParam ( ':cid', $info['cid'], PDO::PARAM_STR );
+
+//execute
+$qry4->execute ();
+
+
+//finally, delete the challenge
+$qry5 = $dbh->prepare("DELETE
+					   FROM Challenges
+					   WHERE cid =:cid");
+
+//get the cid from an earlier qry and use that to delete the root challenge
+$qry5->bindParam ( ':cid', $info['cid'], PDO::PARAM_STR );
+
+//execute
+$qry5->execute ();
+
+
+
+
 Database::clearDB();
 
-//header("location: ../verifychallenges");
+header("location: ../verifychallenges");
 ?>
