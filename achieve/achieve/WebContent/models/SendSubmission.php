@@ -47,10 +47,10 @@ try {
 				        </div>
 			  		
 			  			<form enctype="multipart/form-data" action="<?php echo htmlentities($_SERVER['PHP_SELF'] . '?id=' . $value);?>" method="post">
-						  <input class=".btn-challenge" type="hidden" name="MAX_FILE_SIZE" value="99999999" />
-						  <div class=".btn-challenge"><input name="image" type="file" /></div>
-						  <input class="form-control" type="text" name="note" placeholder="Challenge Note" maxlength="255" title="Please enter a valid note">
-					      <div class=".btn-challenge"><input type="submit" value="Submit" /></div>
+						  <input type="hidden" name="MAX_FILE_SIZE" value="99999999" />
+						  <div class="file-input-pos"><input name="image" type="file" /></div>
+						  <input class="form-control challenge-note" type="text" name="note" placeholder="Challenge Note" maxlength="255" title="Please enter a valid note">
+					      <div class="btn-challenge-pos"><input class="sub-challenge-btn" type="submit" value="Submit" /></div>
 					    </form>
 			  	
 			  	  </div>
