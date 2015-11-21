@@ -15,7 +15,10 @@ class GetProfileInfo{
 		$stmt->execute();
 		
 		//set the fetch mode to associative array
-		$array = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+		$stmt->setFetchMode(PDO::FETCH_ASSOC);
+		
+		//fetch values
+		$array = $stmt->fetch();
 		
 		echo $array['rank'];
 		
@@ -38,7 +41,10 @@ class GetProfileInfo{
 		$stmt->execute();
 		
 		//set the fetch mode to associative array
-		$array = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+		$stmt->setFetchMode(PDO::FETCH_ASSOC);
+		
+		//fetch values
+		$array = $stmt->fetch();
 		
 		echo $array['points'];
 		
@@ -61,7 +67,10 @@ class GetProfileInfo{
 		$stmt->execute();
 		
 		//set the fetch mode to associative array
-		$array = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+		$stmt->setFetchMode(PDO::FETCH_ASSOC);
+		
+		//fetch values
+		$array = $stmt->fetch();
 		
 		echo $array['title'];
 		
