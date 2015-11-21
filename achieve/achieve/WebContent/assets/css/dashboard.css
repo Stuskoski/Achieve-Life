@@ -16,6 +16,7 @@
 a{
 	color:#B20000;
 	font-weight:900;
+	font-size:20px;
 }
 
 a:visited{
@@ -26,4 +27,11 @@ a:visited{
 
 .link{
 	margin-bottom:30px;
+}
+
+.info{
+	color:white !important;
+	font-weight:900;
+	margin-bottom:30px;
+	font-size:20px;
 }

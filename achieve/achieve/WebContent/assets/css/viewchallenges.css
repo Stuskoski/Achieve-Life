@@ -1,3 +1,54 @@
+.challenge-note{
+	max-width:425px;
+}
+
+.btn-challenge-pos{
+	margin-left:25px;
+}
+
+.sub-challenge-btn{
+   background-color:#1a1a1a;
+   min-height:24px;
+   max-height:24px;
+   border-radius:30px;
+  -webkit-border-radius:30px;
+  -moz-border-radius:30px;
+   padding:7px 20px 7px 20px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+   transition: all 0.5s ease-in-out;
+   margin:10px 5px 5px 0px;
+   border:none !important;
+}
+
+.sub-challenge-btn:hover{
+	color:#B20000;
+    text-decoration:none;
+}
+
+.file-input-pos{
+   max-width:425px !important;
+   background-color:#1a1a1a;
+   min-height:35px;
+   max-height:35px;
+   border-radius:5px;
+  -webkit-border-radius:5px;  
+  -moz-border-radius:5px;
+   padding:7px 20px 7px 20px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+   transition: all 0.5s ease-in-out;
+   margin:10px 5px 5px 0px;	
+}
+
+
+.file-input-pos:hover{
+    color:#B20000;
+    text-decoration:none;
+}
+
 .yes{
 	 padding-top:15px;
 	 position:absolute;
