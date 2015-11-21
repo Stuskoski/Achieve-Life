@@ -1,3 +1,25 @@
+.yes{
+	 padding-top:15px;
+	 position:absolute;
+	 bottom:50px;
+	 right: 50px;
+ 	 font-size:25px;
+     color:#008000;
+     font-weight:900;
+     margin:15px;
+}
+
+.no{
+	 padding-top:15px;
+	 position:absolute;
+	 bottom:50px;
+	 left: 50px;
+	 font-size:25px;
+     color:#B20000;
+     font-weight:900;
+     margin:15px;
+}
+
 a{
 	color:#B20000;
 }

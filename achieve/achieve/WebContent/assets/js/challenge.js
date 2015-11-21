@@ -42,10 +42,13 @@ $(function() {
 	  });
 
 $(function() {
-    $(document).on('click', '.submit-submission', function(e) {
-       var x = $("#sub-sub-btn").val();
-       alert(text(x));
+    $('div').on('click', 'a', function(e) {
+       alert("test");
        e.preventDefault();
     });
 });
- 
+
+function no(str){
+	event.preventDefault();
+	alert(str);
+}

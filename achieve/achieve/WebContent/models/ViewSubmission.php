@@ -59,9 +59,11 @@ if(!isset($_SESSION['user_session'])){
 			        </div>
 		  		
 		  			<div class="container submission">
-		  		    <span class="sub-pic"><?php echo '<img alt="No Picture Submitted" class="challengePic" style="width:360px;height:360px;" src="data:image/jpeg;base64,'.base64_encode( $row['submitPic'] ).'"/>';?></span>
-		  			<span class="sub-date"><?php echo $row['dateCreated'];?></span>
-		  			<h4><?php echo $row['note'];?></h4>
+			  		    <span class="sub-pic"><?php echo '<img alt="No Picture Submitted" class="challengePic" style="width:360px;height:360px;" src="data:image/jpeg;base64,'.base64_encode( $row['submitPic'] ).'"/>';?></span>
+			  			<span class="sub-date"><?php echo $row['dateCreated'];?></span>
+			  			<h4><?php echo $row['note'];?></h4>
+			  			<a href="NoAcceptSub.php?user=<?php echo $row['user1'] . "&id=" . $row['sid'];?>"><i class="ion-close no"></i></a>
+			  			<a href="YesAcceptSub.php?user=<?php echo $row['user1'] . "&id=" . $row['sid'];?>"><i class="ion-checkmark yes"></i></a>
 		  			</div>
 		  	  </div>
 		  	  <div class="col-lg-3 col-md-3 col-sm-2 col-xs-0"></div>

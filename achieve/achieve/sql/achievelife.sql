@@ -16,7 +16,7 @@ CREATE TABLE Admins (
   title				varchar(40) COLLATE utf8_unicode_ci,
   pCount			int(10),
   aCount			int(4),
-  pPic				BLOB NOT NULL,
+  pPic				BLOB,
   pPicName 			varchar(50) COLLATE utf8_unicode_ci,
   dateCreated       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (uid)
@@ -34,8 +34,9 @@ CREATE TABLE Users (
   title				varchar(40) COLLATE utf8_unicode_ci,
   pCount			int(10),
   aCount			int(4),
-  pPic				longblob NOT NULL,
+  pPic				longblob,
   rank				int(3),
+  points			int(10),
   honesty			int(2),
   dateCreated       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (uid)
@@ -133,14 +134,14 @@ INSERT INTO Admins (uid, firstName, lastName, userName, email, password, gender,
 INSERT INTO Admins (uid, firstName, lastName, userName, email, password, gender, title) VALUES 
 	   ('3', 'Sean', 'Butcher', 'admin3', 'butcher.sean@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', 'Admin');
 	   
-INSERT INTO Users (uid, firstName, lastName, userName, email, password, gender, title, pPic, rank) VALUES 
-	   ('1', 'John', 'Smith', 'user1', 'jsmith@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', 'Peasant', LOAD_FILE('/home/stus/Desktop/joust/generic.png'), '1');
-INSERT INTO Users (uid, firstName, lastName, userName, email, password, gender, pPic, title) VALUES 
-	   ('2', 'Augustus', 'Rutkoski', 'admin1', 'stuskoski@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', LOAD_FILE('/home/stus/Desktop/joust/generic.png'), 'Admin');
-INSERT INTO Users (uid, firstName, lastName, userName, email, password, gender, pPic, title) VALUES 
-	   ('3', 'Michael', 'Murata', 'admin2', 'Murata_m33@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', LOAD_FILE('/home/stus/Desktop/joust/generic.png'), 'Admin');
-INSERT INTO Users (uid, firstName, lastName, userName, email, password, gender, pPic, title) VALUES 
-	   ('4', 'Sean', 'Butcher', 'admin3', 'butcher.sean@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', LOAD_FILE('/home/stus/Desktop/joust/generic.png'), 'Admin');
+INSERT INTO Users (uid, firstName, lastName, userName, email, password, gender, title, rank, points) VALUES 
+	   ('1', 'John', 'Smith', 'user1', 'jsmith@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', 'Peasant', '1', '0');
+INSERT INTO Users (uid, firstName, lastName, userName, email, password, gender, title, points) VALUES 
+	   ('2', 'Augustus', 'Rutkoski', 'admin1', 'stuskoski@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', 'Admin', '0');
+INSERT INTO Users (uid, firstName, lastName, userName, email, password, gender, title, points) VALUES 
+	   ('3', 'Michael', 'Murata', 'admin2', 'Murata_m33@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', 'Admin', '0');
+INSERT INTO Users (uid, firstName, lastName, userName, email, password, gender, title, points) VALUES 
+	   ('4', 'Sean', 'Butcher', 'admin3', 'butcher.sean@yahoo.com', '6367c48dd193d56ea7b0baad25b19455e529f5ee1', 'm', 'Admin', '0');
 	   
 INSERT INTO Friends (rid, user1, user2) VALUES 
 	   ('1', 'admin1', 'admin2');
