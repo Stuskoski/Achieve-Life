@@ -77,4 +77,30 @@ class GetProfileInfo{
 		//Clear the connection to the database
 		Database::clearDB();
 	}
+	
+	public function getHonesty($user){
+		$dbh = Database::getDB();
+	
+		//prepare sql statement
+		$stmt = $dbh->prepare("SELECT honesty
+							   FROM Users
+							   WHERE userName = :userName");
+	
+		//bind
+		$stmt->bindParam ( ':userName', $user, PDO::PARAM_STR );
+	
+		//execute!
+		$stmt->execute();
+	
+		//set the fetch mode to associative array
+		$stmt->setFetchMode(PDO::FETCH_ASSOC);
+	
+		//fetch values
+		$array = $stmt->fetch();
+	
+		echo $array['honesty'];
+	
+		//Clear the connection to the database
+		Database::clearDB();
+	}
 }

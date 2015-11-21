@@ -20,6 +20,7 @@ class DashboardView {
 	  	<div class="info"><span>You Have <?php GetProfileInfo::getPoints($_SESSION['user_session']);?> Points</span></div>
 	  	<div class="info"><span>You Are Rank: <?php GetProfileInfo::getRank($_SESSION['user_session']);?></span></div>
 	  	<div class="info"><span>You Have The Title of: <?php GetProfileInfo::getTitle($_SESSION['user_session']);?></span></div>
+	  	<div class="info"><span>You Have A Honesty Rating of: <?php GetProfileInfo::getHonesty($_SESSION['user_session']);?>%</span></div>
 	  	</div>
 	  </div>
 	 </div>
