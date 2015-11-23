@@ -1,3 +1,115 @@
+.btn-black-lg{
+	font-family: 'Play', sans-serif;
+	border: solid 2px #000;
+	color: #000;
+	background-color: transparent;
+	padding: 8px 32px;
+	text-transform: uppercase;
+	-webkit-transition: color .2s linear, background-color .2s linear;
+  	-moz-transition: color .2s linear, background-color .2s linear;
+  	-o-transition: color .2s linear, background-color .2s linear;
+	transition: color .2s linear, background-color .2s linear;
+}
+.btn-black-lg:focus, .btn-black-lg:hover{
+  	color: #B20000;
+  	background-color: #000;
+  	text-decoration: none;
+}
+
+.form-horizontal .control-label{
+	padding-top: 0px;
+	text-align: left;
+	margin-bottom: 5px;
+}
+.form-control{
+	background-color: rgba(0,0,0,0.8);
+	color: #fff;
+}
+.form-group{
+	font-family: 'Source Code Pro', sans-serif;
+	margin-bottom: 0px;
+}
+.form-group.required .control-label:after{
+	color: red;
+   	content: "*";
+   	position: absolute;
+   	margin-left: 5px;
+}
+.help-block{
+	color: red;
+	display: inline-block;
+	min-height: 12px;
+}
+.form-control-feedback{
+	right: 15px; 
+	color: red;
+}
+.form-control:focus{   
+    border-color: rgba(255, 0, 0, 0.8);
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px rgba(229, 103, 23, 0.6);
+    outline: 0 none;
+}	
+#submitBtn{ 
+	text-align: center;
+}
+
+#signup {
+    background: url(../img/knightsRally.jpg) no-repeat center center; 
+    padding: 0;
+    -webkit-background-size: cover;
+    background-size: cover;
+    -moz-background-size: cover;    
+}
+
+#signup .overlay {
+       padding-top: 120px;
+       background-color: rgba(36, 36, 36, 0.5);
+       min-height: 970px;
+       padding-bottom: 40px;
+   }
+   
+body{
+	color:white;
+}
+   
+.btn-add {
+   background-color:#1a1a1a;
+   min-height:35px;
+   max-height:35px;
+   border-radius:30px;
+  -webkit-border-radius:30px;
+  -moz-border-radius:30px;
+   padding:7px 20px 7px 20px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+   transition: all 0.5s ease-in-out;
+   margin:10px 5px 5px 0px;
+}
+
+.btn-add:hover{
+    color:#B20000;
+    text-decoration:none;
+}
+
+.submit-form{
+	opacity: 0.7;
+	color:#000;
+	margin-bottom: 10px;
+	max-width: 450px;
+}
+
+.submit-form-name{
+	opacity: 0.7;
+	color:#000;
+	min-height: 30px;
+	min-width: 200px;
+
+}
+body {
+  background: black;
+}
+
 #setting {
     background: url(../img/knightIntoBattle.jpg) no-repeat center center; 
     padding: 0;
