@@ -29,30 +29,30 @@ if(!isset($_SESSION['user_session'])){
 									<span class="help-block" id="lnameErr"></span>
 								</div>
 							</div>
-							<div class="form-group required">
+							<div class="form-group ">
 								<div class="col-xs-12">
-									<input type="email" class="form-control" name="email" placeholder="Email" required> 
+									<input type="email" class="form-control" name="email" placeholder="Email" > 
 									<span class="form-control-feedback" id="emailErr-feedback"></span> 
 									<span class="help-block" id="emailErr"></span>
 								</div>
 							</div>
-							<div class="form-group required">
+							<div class="form-group ">
 								<div class="col-xs-12">
-									<input type="text" class="form-control" name="username" placeholder="Username" required> 
+									<input type="text" class="form-control" name="username" placeholder="Username" > 
 									<span class="form-control-feedback" id="usernameErr-feedback"></span> 
 									<span class="help-block" id="usernameErr"></span>
 								</div>
 							</div>
-							<div class="form-group required">
+							<div class="form-group ">
 								<div class="col-xs-12">
-									<input type="password" class="form-control" name="passwd" placeholder="Password" required> 
+									<input type="password" class="form-control" name="passwd" placeholder="Password" > 
 									<span class="form-control-feedback" id="passwdErr-feedback"></span> 
 									<span class="help-block" id="passwdErr"></span>
 								</div>
 							</div>
-							<div class="form-group required">
+							<div class="form-group ">
 								<div class="col-xs-12">
-									<input type="password" class="form-control" name="repasswd" placeholder="Retype password" required> 
+									<input type="password" class="form-control" name="repasswd" placeholder="Retype password" > 
 									<span class="form-control-feedback" id="repasswdErr-feedback"></span> 
 									<span class="help-block" id="repasswdErr"></span>
 								</div>
