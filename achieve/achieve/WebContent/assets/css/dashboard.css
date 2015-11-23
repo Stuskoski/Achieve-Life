@@ -16,7 +16,7 @@
 a{
 	color:#B20000;
 	font-weight:900;
-	font-size:20px;
+	font-size:16px;
 }
 
 a:visited{
@@ -41,4 +41,15 @@ a:visited{
 	font-weight:900;
 	margin-bottom:30px;
 	font-size:20px;
+}
+.bl {
+	border-left: 1px solid;
+	color:white;
+}
+.br {
+	border-right: 1px solid;
+	color:white;
+}
+.infoSec{
+	min-height: 400px;
 }
