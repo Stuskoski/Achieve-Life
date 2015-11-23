@@ -15,6 +15,7 @@ class DashboardView {
 	  <div id="dashboard">
 	   <div class="overlay">
 	  	<div class="container">
+	  	<h1>Welcome <?php echo $_SESSION['user_session']?></h1>
 	  	<div class ="link"><a href="viewchallenges">View Challenges Sent To You</a></div>
 	  	<div class ="link"><a href="verifychallenges">Verify Challenges You Sent</a></div>
 	  	<div class="info"><span>You Have <?php GetProfileInfo::getPoints($_SESSION['user_session']);?> Points</span></div>
@@ -24,25 +25,6 @@ class DashboardView {
 	  	</div>
 	  </div>
 	 </div>
-		
-  	
-  	
-  	
-  	
-  	
-  	
-  	
-  	
-  	
-  	
-  	
-  	
-  	
-  	
-  	
-  	
-  	
-  	
   	<?php 
   }
 }

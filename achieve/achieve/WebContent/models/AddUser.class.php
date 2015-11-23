@@ -64,14 +64,15 @@ function addUser(){
 				
 				$dbh = Database::getDB();
 					
-				$stmt =  $dbh->prepare("INSERT INTO Users(firstName, lastName, userName, email, password, rank, points, honesty)
-												Values(:firstName, :lastName, :userName, :email, :password, :rank, :points, :honesty)");
+				$stmt =  $dbh->prepare("INSERT INTO Users(firstName, lastName, userName, email, password, rank, title, points, honesty)
+												Values(:firstName, :lastName, :userName, :email, :password, :rank, :title, :points, :honesty)");
 				$stmt->bindValue(':firstName', $fname, PDO::PARAM_STR);
 				$stmt->bindValue(':lastName', $lname, PDO::PARAM_STR);
 				$stmt->bindValue(':userName', $username, PDO::PARAM_STR);
 				$stmt->bindValue(':email', $email, PDO::PARAM_STR);
 				$stmt->bindValue(':password', sha1($passwd), PDO::PARAM_STR);
 				$stmt->bindValue(':rank', '1', PDO::PARAM_STR);
+				$stmt->bindValue(':title', 'Peasant', PDO::PARAM_STR);
 				$stmt->bindValue(':points', '0', PDO::PARAM_STR);
 				$stmt->bindValue(':honesty', '100', PDO::PARAM_STR);
 				$stmt->execute ();
