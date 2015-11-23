@@ -18,7 +18,7 @@ if($id=="*"){
 
 $dbh = Database::getDB();
 
-$qry = $dbh->prepare("DELETE FROM submissions
+$qry = $dbh->prepare("DELETE FROM Submissions
 					  WHERE sid = :id");
 //bind params
 $qry->bindParam ( ':id', $id, PDO::PARAM_INT );

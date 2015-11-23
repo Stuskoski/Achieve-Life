@@ -18,9 +18,9 @@ $dbh = Database::getDB();
 
 //get the information about the submission and challenge
 $qry1 = $dbh->prepare("SELECT c.points, s.user1, c.cid
-		               FROM submissions s
+		               FROM Submissions s
 					   INNER JOIN
-					   challenges c 
+					   Challenges c 
 					   ON s.cid=c.cid
 					   WHERE s.sid = :id");
 
