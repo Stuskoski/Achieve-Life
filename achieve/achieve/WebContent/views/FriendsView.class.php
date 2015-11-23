@@ -29,8 +29,13 @@ class FriendsView {
 			        <div class="container display-friends">
 			        	<?php 
 			        		$array = GetFriends::getAll($_SESSION['user_session']);
-			        		foreach($array as $val){
-			        			echo '<h4>' . $val . '</h4>';
+			        		
+			        		if(empty($array)){
+			        			echo "";
+			        		}else{
+				        		foreach($array as $val){
+				        			echo '<h4>' . $val . '</h4>';
+				        		}
 			        		}
 			        	?>
 				        </div>

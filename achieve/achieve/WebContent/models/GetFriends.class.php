@@ -36,6 +36,10 @@ class GetFriends{
 				/***Clear the connection to the database***/
 				Database::clearDB();
 				
+				if(empty($ary)){
+					$ary='';
+				}
+				
 				return $ary;
 				
 				

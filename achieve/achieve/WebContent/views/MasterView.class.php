@@ -51,6 +51,7 @@ class MasterView {
 						</a> <a href="setting"> <i class="ion-ios-gear-outline"></i>
 						</a> <a href="challenge"> <i class="ion-ios-game-controller-b-outline"></i>
 						</a> <a href="guild"> <i class="ion-beer"></i>
+						</a> <a href="friends"> <i class="ion-ios-people-outline"></i>
 						<?php if(isset($_SESSION['user_session'])){?>
 						</a> <a href="logout"> <i class="ion-ios-close-outline exit"></i>
 						<?php }?>
@@ -147,6 +148,7 @@ class MasterView {
   						</a> <a href="../setting"> <i class="ion-ios-gear-outline"></i>
   						</a> <a href="../challenge"> <i class="ion-ios-game-controller-b-outline"></i>
   						</a> <a href="../guild"> <i class="ion-beer"></i>
+  						</a> <a href="friends"> <i class="ion-ios-people-outline"></i>
   						<?php if(isset($_SESSION['user_session'])){?>
   						</a> <a href="../logout"> <i class="ion-ios-close-outline exit"></i>
   						<?php }?>

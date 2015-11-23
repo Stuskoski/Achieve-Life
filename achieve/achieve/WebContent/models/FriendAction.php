@@ -15,7 +15,7 @@ try{
 	$user = $_SESSION['user_session'];
 	
 
-	if($friend === $user || $friend==='' || $friend='*'){
+	if($friend === $user || $friend==='' || $friend==='*'){
 		header('location:../friends');
 		exit();
 	}
@@ -47,7 +47,8 @@ try{
 		
 		/*** exceute the query ***/
 		$stmt->execute();
-
+		
+		echo "add executed";
 		header('location:../friends');
 		
 	}
@@ -81,10 +82,12 @@ try{
 		/*** exceute the query ***/
 		$stmt->execute();
 		
+		echo "remove executed";
 		header('location:../friends');
 	}
 	
 	else{
+		echo "other executed";
 		header('location:../dashboard');
 	}
 
