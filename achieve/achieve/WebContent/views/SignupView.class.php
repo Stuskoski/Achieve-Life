@@ -7,7 +7,7 @@ class SignupView {
    <div class="overlay">
 	<div class="container">
 		<div class="row">
-			<form class="form-horizontal" role="form" action="controllers/SignupController.class.php" method="post">
+			<form class="form-horizontal" role="form" action="models/AddUser.class.php" method="post">
 				<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
 					<h2>Signup Form</h2>
 					<div class="form-group">
@@ -53,7 +53,7 @@ class SignupView {
 				</div>
 				<div class="col-xs-12">
 					<div id="submitBtn">
-						<button type="submit" class="btn btn-black-lg">Submit</button>
+						<input type="submit" class="btn btn-black-lg" value="Submit" name="submit"></input>
 					</div>
 				</div>
 			</form>
@@ -61,7 +61,8 @@ class SignupView {
 	</div>
   </div>
 </div>
-	<?php
+<script src="assests/js/signup.js"></script>
+<?php
 	}
 }
 ?>
