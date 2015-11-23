@@ -29,6 +29,7 @@ class DashboardView {
   					</div>
   					<div class="col-md-8 infoSec bl br">
   						<div class="infoHead"><span class="h2">Dashboard</span></div>
+  						<div class="info"><span>Currently, our information about our users is stored on separate pages for development purposes, eventually most of these components would move over to the dashboard or have subsets on the specifc info requested</span></div>
   					</div>
   					<div class="col-md-2 infoSec bl">
   						<div class="infoHead"><span class="h2">Links</span></div>
