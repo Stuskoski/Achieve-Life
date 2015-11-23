@@ -10,12 +10,11 @@ class FriendsView {
   	
   	?>
   	
-  	<script src="assets/js/challenge.js"></script> 
+  	<script src="assets/js/friends.js"></script> 
   	<link href="assets/css/friends.css" rel="stylesheet">
 	  <div id="friends">
 	   <div class="overlay">
 	  	<div class="container">
-	  	
 	  	
 	  		<div class="row scroll-me">
 			 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-0"></div>
@@ -34,13 +33,14 @@ class FriendsView {
 			        			echo '<h4>' . $val . '</h4>';
 			        		}
 			        	?>
-			        </div>
-			        <div class="hint"><span class="makeMeColor">Find Users:</span><input class="hintInput" type="text" onkeyup="showAllUsers(this.value)" onsubmit="enterHint(this.value)">
-		  			<span id="Suggestion">Suggestions: </span><span id="txtHint"></span></div>
-			        <div class="inline">
-			        	<input id="btn-add" type="button" class="btn btn-add-friends btn-1" value="Add Friend">
-			        	<input id="btn-add" type="button" class="btn btn-remove-friends btn-2" value="Remove Friend">
-			        </div>
+				        </div>
+				   <form action="models/FriendAction.php" method="post">
+				        <div class="hint"><span class="makeMeColor">Find Users:</span><input name ="friend" class="hintInput" type="text" onkeyup="showAllUsers(this.value)" onsubmit="enterHint(this.value)">
+			  			<span id="Suggestion">Suggestions: </span><span id="txtHint"></span></div>
+			        	<input id="btn-add" type="submit" class="btn btn-add-friends btn-1" value="Add Friend" name="AddFriend">
+			        	<input id="btn-add" type="submit" class="btn btn-remove-friends btn-2" value="Remove Friend" name="RemoveFriend">
+			        	
+			       </form>  
 				 </div>
 		         <div class="col-lg-3 col-md-2 col-sm-2 col-xs-0"></div>
 		        </div>
