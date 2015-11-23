@@ -73,6 +73,8 @@ h4{
 }
 
 #txtHint{
+	display:block;
+	margin-bottom:30px;
 	margin-left:85px;
 }
 

@@ -35,11 +35,11 @@ class FriendsView {
 			        	?>
 				        </div>
 				   <form action="models/FriendAction.php" method="post">
-				        <div class="hint"><span class="makeMeColor">Find Users:</span><input name ="friend" class="hintInput" type="text" onkeyup="showAllUsers(this.value)" onsubmit="enterHint(this.value)">
-			  			<span id="Suggestion">Suggestions: </span><span id="txtHint"></span></div>
 			        	<input id="btn-add" type="submit" class="btn btn-add-friends btn-1" value="Add Friend" name="AddFriend">
 			        	<input id="btn-add" type="submit" class="btn btn-remove-friends btn-2" value="Remove Friend" name="RemoveFriend">
-			        	
+			        	<span id="Suggestion">Suggestions: </span><span id="txtHint"></span>
+			        	<div class="hint"><span class="makeMeColor">Find Users:</span><input name ="friend" class="hintInput" type="text" onkeyup="showAllUsers(this.value)" onsubmit="enterHint(this.value)">
+			  			</div>	        	
 			       </form>  
 				 </div>
 		         <div class="col-lg-3 col-md-2 col-sm-2 col-xs-0"></div>
