@@ -25,6 +25,23 @@ function showHint(str) {
     }
 }
 
+
+function showAllUsers(str) {
+    if (str.length == 0) {
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET", "models/ShowAllUsers.php?q=" + str, true);
+        xmlhttp.send();
+    }
+}
+
 //Prevents the user from being able to submit the form with pressing enter.  Need this to keep the form from submitting when pressing enter in the search hint form.
 $(document).on("keypress", ":input:not(textarea)", function(event) {
     return event.keyCode != 13;

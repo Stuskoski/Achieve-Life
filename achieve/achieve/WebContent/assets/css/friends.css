@@ -1,0 +1,123 @@
+#friends {
+    background: url(../img/friends.jpg) no-repeat center center; 
+    padding: 0;
+    -webkit-background-size: cover;
+    background-size: cover;
+    -moz-background-size: cover;    
+}
+
+#friends .overlay {
+       padding-top: 120px;
+       background-color: rgba(36, 36, 36, 0.5);
+       min-height: 970px;
+       padding-bottom: 40px;
+   }
+   
+body{
+	color:white;
+}
+
+.hintInput{
+	color:black;
+	margin-left:15px;
+}
+
+
+.display-friends{
+	background-color:rgba(0,0,0,0.7);
+	color:white;
+	max-width: 450px;
+	margin-left:-0px;
+	margin-bottom:15px;
+	padding-top:7px;
+	padding-bottom:55px;
+	text-align: center;
+	position: relative;
+}
+
+#review-title{
+	margin-left:110px;
+}
+   
+a{
+	color:#B20000;
+	font-weight:900;
+	font-size:20px;
+}
+
+a:visited{
+	color:#B20000;
+	font-weight:900;
+}
+
+
+.link{
+	margin-bottom:30px;
+}
+
+.info{
+	color:white !important;
+	font-weight:900;
+	margin-bottom:30px;
+	font-size:20px;
+}
+
+h4{
+	margin-left:-360px;
+	margin-top:5px;
+}
+
+#Suggestion{
+	display:block;
+	margin-top:15px;
+}
+
+#txtHint{
+	margin-left:85px;
+}
+
+.btn-add-friends {
+   border-color:white;
+   background-color:#1a1a1a;
+   min-height:35px;
+   max-height:35px;
+   border-radius:30px;
+  -webkit-border-radius:30px;
+  -moz-border-radius:30px;
+   padding:7px 20px 7px 20px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+   transition: all 0.5s ease-in-out;
+   margin:10px 5px 5px 0px;
+   margin-top:30px;
+}
+
+
+.btn-add-friends:hover{
+    color:#B20000;
+    text-decoration:none;
+}
+
+.btn-remove-friends {
+   background-color:#1a1a1a;
+   color:#B20000;
+   min-height:35px;
+   max-height:35px;
+   border-radius:30px;
+   border-color:#B20000;
+  -webkit-border-radius:30px;
+  -moz-border-radius:30px;
+   padding:7px 20px 7px 20px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+   transition: all 0.5s ease-in-out;
+   margin:10px 5px 5px 0px;
+   margin-top:29px;
+}
+
+.btn-remove-friends:hover{
+    color:white;
+    text-decoration:none;
+}

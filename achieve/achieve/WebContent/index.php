@@ -51,6 +51,11 @@
 			VerifyChallengesController::show();
 			MasterView::showFooter();
 			break;
+		case "friends":
+			MasterView::showHeader();
+			FriendsController::show();
+			MasterView::showFooter();
+			break;
 		default:
 			MasterView::showHeader();
 			DashboardController::show();
