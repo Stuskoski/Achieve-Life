@@ -6,6 +6,8 @@ function updateUser(){
 	$fname = $lname = $email = $username = $passwd = $repasswd = "";
 	$fnameErr = $lnameErr = $emailErr = $usernameErr = $passwdErr = $repasswdErr = "";
 	$errCount = 0;
+	$uname = $_SESSION['user_session'];
+	
 	
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (!empty($_POST["fname"])) {
@@ -65,12 +67,13 @@ function updateUser(){
 				
 				$dbh = Database::getDB();
 					
-				$stmt = $dbh->prepare("UPDATE Users SET firstName=:firstName, lastName=:lastName, userName=:userName, email=:email, password=:password WHERE uid=");
+				$stmt = $dbh->prepare("UPDATE Users SET firstName=:firstName, lastName=:lastName, userName=:userName, email=:email, password=:password WHERE username=:uname");
 				$stmt->bindValue(':firstName', $fname, PDO::PARAM_STR);
 				$stmt->bindValue(':lastName', $lname, PDO::PARAM_STR);
 				$stmt->bindValue(':userName', $username, PDO::PARAM_STR);
 				$stmt->bindValue(':email', $email, PDO::PARAM_STR);
 				$stmt->bindValue(':password', sha1($passwd), PDO::PARAM_STR);
+				$stmt->bindValue(':uname', $uname, PDO::PARAM_STR);
 				$stmt->execute ();
 			} catch(Exception $e){
 				echo "<br>" . $e->getMessage() . "</b>";

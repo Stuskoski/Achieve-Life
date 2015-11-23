@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once("Database.class.php");
+require_once("GetFriends.class.php");
 
 function addUser(){
 	$fname = $lname = $email = $username = $passwd = $repasswd = "";
@@ -39,6 +40,13 @@ function addUser(){
 		} else {
 			$username = stripInput($_POST["username"]);
 		}
+		
+		$array = GetFriends::getAllUsers();
+		
+		if(in_array($username, $array)){
+			$usernameErr = "Username already exists";
+			$errCount++;
+		}
 			
 		if (empty($_POST["passwd"])) {
 			$passwdErr = "Password is required";
@@ -56,9 +64,9 @@ function addUser(){
 				}
 			}
 		}
-	
+	 	$errorMsg = "<span>First name: $fnameErr\nLast name: $lnameErr\nUsername: $userNameErr\nEmail: $emailErr\nPassword: $passwdErr\nRetyped Password: $repasswdErr\n</span>";
 		if ($errCount > 0){
-			echo '<script type="text/javascript">alert("errors")</script>';
+			echo $errorMsg;
 		} else {
 			try{
 				

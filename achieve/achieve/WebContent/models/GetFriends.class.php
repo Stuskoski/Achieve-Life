@@ -48,4 +48,42 @@ class GetFriends{
 			}
 		}
 	}
+	
+	public function getAllUsers(){
+		if(isset($_SESSION['user_session'])){
+			try{
+				//echo $user;
+				/*** connect to the database ***/
+				$dbh = Database::getDB();
+		
+		
+				/*** The sql statement ***/
+				$stmt =  $dbh->prepare("SELECT userName
+								FROM Users");
+		
+				/*** Bind params ***/
+				$stmt->bindParam ( ':user', $_SESSION['user_session'], PDO::PARAM_STR );
+		
+				/*** exceute the query ***/
+				$stmt->execute();
+		
+				/*** set the fetch mode to associative array ***/
+				$stmt->setFetchMode(PDO::FETCH_NUM);
+		
+				/*** set the header for the image ***/
+				//$array = $stmt->fetch();
+		
+				/***Parse through the list***/
+				while ($row = $stmt->fetch()) {
+					$a[] = $row[0];
+				}
+				/***Clear the connection to the database***/
+				Database::clearDB();
+				return $a; 
+				
+			}catch(Exception $e){
+				echo $e->getMessage();
+			}
+		}	
+	}
 }
