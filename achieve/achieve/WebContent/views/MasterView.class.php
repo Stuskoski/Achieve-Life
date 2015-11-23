@@ -28,6 +28,8 @@ class MasterView {
 <link href="assets/css/style.css" rel="stylesheet" />
 <!-- IE10 viewport hack  -->
 <script src="assets/js/ie-10-view-port.js"></script>
+<!-- GOOGLE FONT LINK -->
+<link href='https://fonts.googleapis.com/css?family=Metamorphous' rel='stylesheet' type='text/css'>
 <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>

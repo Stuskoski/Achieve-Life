@@ -28,7 +28,14 @@ a:visited{
 .link{
 	margin-bottom:30px;
 }
-
+.infoHead{
+	font-family: 'Metamorphous', 'Lato';
+	color:black !important;
+	text-align: center;
+	font-weight:900;
+	margin-bottom:30px;
+	font-size:20px;
+}
 .info{
 	color:white !important;
 	font-weight:900;
